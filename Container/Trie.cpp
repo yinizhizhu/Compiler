@@ -50,7 +50,7 @@ void del(Trie *root)                      //释放整个字典树占的堆区空间
 	free(root);
 }
 
-void init_Trie(Trie *root)	//Init the Trie to store the Key Words
+Trie *init_Trie(Trie *root)	//Init the Trie to store the Key Words
 {
 	int i;
 	root = (Trie *)malloc(sizeof(Trie));
@@ -59,5 +59,5 @@ void init_Trie(Trie *root)	//Init the Trie to store the Key Words
 	root->isStr = false;
 	for (i = 0; i < 35; i++)
 		insertStr(root, key_words[i]);
-	return;
+	return root;
 }

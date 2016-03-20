@@ -67,7 +67,8 @@
 #define Q_MARK 63
 
 //The upper of key words
-const char KEY_WORDS[63][10] = { "AND", "ARRAY", "BEGIN", "CASE",
+const char KEY_WORDS[64][10] = { "", 
+								"AND", "ARRAY", "BEGIN", "CASE",
 								"CONST", "DIV", "DO", "DOWNTO",
 								"ELSE", "END", "FILE", "FOR",
 								"FUNCTION", "GOTO", "IF", "IN",
