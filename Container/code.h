@@ -1,6 +1,7 @@
 #if !defined CODE_H
 #define CODE_H
 
+//The code of tokens
 #define AND 1
 #define ARRAY 2
 #define BEGIN 3
@@ -37,7 +38,7 @@
 #define WHILE 34
 #define WITH 35
 #define ID 36
-#define NIT 37
+#define INT 37
 #define REAL 38
 #define STRING 39
 #define PLUS 40
@@ -65,4 +66,50 @@
 #define RS_BRAC 62
 #define Q_MARK 63
 
+//The upper of key words
+const char KEY_WORDS[63][10] = { "AND", "ARRAY", "BEGIN", "CASE",
+								"CONST", "DIV", "DO", "DOWNTO",
+								"ELSE", "END", "FILE", "FOR",
+								"FUNCTION", "GOTO", "IF", "IN",
+								"LABEL", "MOD", "NIL", "NOT",
+								"OF", "OR", "PACKED", "PROCEDURE",
+								"PROGRAM", "RECORD", "REPEAT", "SET",
+								"THEN", "TO", "TYPE", "UNTIL",
+								"VAR", "WHILE", "WITH", "ID",
+								"INT", "REAL", "STRING", "PLUS",
+								"MINUS", "MULTI", "RDIV", "EQ",
+								"LT", "GT", "LE", "GE",
+								"NE", "LR_BRAC", "RR_BRAC", "COMMA",
+								"P_MARK", "F_STOP", "RANGE", "COLON",
+								"ASSIGN", "SEMIC", "CAP", "EXP",
+								"LS_BRAC", "RS_BRAC", "Q_MARK" };
+
+//The lower of key words
+const char key_words[63][10] = { "and", "array", "begin", "case",
+									"const", "div", "do", "downto",
+									"else", "end", "file", "for",
+									"function", "goto", "if", "in",
+									"label", "mod", "nil", "not",
+									"of", "or", "packed", "procedure",
+									"program", "record", "repeat", "set",
+									"then", "to", "type", "until",
+									"var", "while", "with", "id",
+									"int", "real", "string", "plus",
+									"minus", "multi", "rdiv", "eq",
+									"lt", "gt", "le", "ge", "ne",
+									"lr_brac", "rr_brac", "comma",
+									"p_mark", "f_stop", "range", "colon",
+									"assign", "semic", "cap", "exp",
+									"ls_brac", "rs_brac", "q_mark" };
+
+
+#define NODE_LENGTH 26			//only support the lower string to store
+typedef struct TrieNode                     //the node of Trie
+{
+	bool isStr;                            //tag the node is tail of the string
+	struct TrieNode *next[NODE_LENGTH];            //the subTrie
+} Trie;
+
+
 #endif
+
