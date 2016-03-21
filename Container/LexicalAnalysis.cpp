@@ -6,27 +6,33 @@ const int BUFFER = 2048;
 
 extern void stirng_tolower(char *arr);
 extern void string_toupper(char *arr);
+extern bool isDigit(char c);
+extern bool isAlpha(char c);
 extern void insertStr(Trie *root, const char *s);
 extern int searchStr(Trie *root, const char *s);
 extern void del(Trie *root);
 extern Trie *init_Trie(Trie *root);
 
-
 void handle()	//To get the upper and lower of key words
 {
 	FILE* fp = fopen("help.txt", "r");
 	FILE* out = fopen("lowerContainer.txt", "w");
+
 	char temp[N];
 	int i, pos = 0;
 	for (i = 1; i < 63; i++)
 	{
 		fscanf(fp, "#define %s %d\n", temp, &pos);
+
 		stirng_tolower(temp);
 		fprintf(out, "\"%s\", ", temp);
 	}
+
 	fscanf(fp, "#define %s %d\n", temp, &pos);
+
 	stirng_tolower(temp);
 	fprintf(out, "\"%s\"\n", temp);
+
 	fclose(out);
 	fclose(fp);
 	return;
@@ -55,6 +61,7 @@ bool isSeparator(char getChar)	//return "true" while separator
 	case '\'':
 	case ' ':
 	case '\n':
+	case 9:
 		return true;
 	default:
 		return false;
@@ -62,18 +69,22 @@ bool isSeparator(char getChar)	//return "true" while separator
 	}
 }
 
-void output(int index, char temp)
+void output(int index, char temp, FILE* out)
 {
 	printf("(%s, %c)\n", KEY_WORDS[index], temp);
+	fprintf(out, "(%s, %c)\n", KEY_WORDS[index], temp);
 	return;
 }
 
 void readProgram(Trie* root)		//Read the program from source file.
 {
 	FILE* fp = fopen("program.txt", "r");
+	FILE* out = fopen("Lexical.txt", "w");
 
 	int move_next = 0, head, tail;
-	int realGet, i;
+	int realGet, i, code=0;
+
+	int lines = 1;		//The lines the cursor lands
 
 	char buffer[2][BUFFER], token[N], temp;
 
@@ -88,107 +99,183 @@ void readProgram(Trie* root)		//Read the program from source file.
 		{
 			tail++;
 			temp = buffer[move_next][i];
-			if (isSeparator(temp))	//the next letter is a separator
+
+			if (!isSeparator(temp))	//the next letter is not separator
+			{
+				//Go on moving to next and keep the letters into "token"
+				if (isDigit(temp))		//The first letter is Digit, so just judge whether the "token" is a number or not
+				{
+					while (!isSeparator(temp))
+					{
+						token[tail - head] = temp;
+						if (!isDigit(temp))
+						{
+							printf("Terrible name in %d line(s)! Please check.\n", lines);
+							return;
+						}
+						i++;
+						tail++;
+						temp = buffer[move_next][i];
+					}
+					code = 37;
+					i--;	//Step back( One Step )
+					tail--;
+				}
+				else if (isAlpha(temp))		//The first is letter: ID or KEY_WORDS
+				{
+					while (!isSeparator(temp))
+					{
+						token[tail - head] = temp;
+						if (code == 0 && isDigit(temp))
+							code = 36;
+						if (code == 0 && temp == '_')
+							code = 36;
+						if (!isDigit(temp) && !isAlpha(temp))
+						{
+							if (temp == '_')
+								;
+							else
+							{
+								printf("Terrible name in %d line(s)! Please check.\n", lines);
+								return;
+							}
+						}
+						i++;
+						tail++;
+						temp = buffer[move_next][i];
+					}
+					i--;
+					tail--;
+				}
+				else if (temp == '"')	//STRING
+					;
+				else
+				{
+					printf("Valid name in %d line(s)! Please check.\n", lines);
+					return;
+				}
+			}
+			else 	//the next letter is a separator
 			{
 				token[tail - head] = '\0';
 				//printf("%s\n", token);
-				if (token[0] >= 'a' && token[0] <= 'z')	//the first one is a letter, so it's a string
+				if (code == 0)	//Token is not number or id
 				{
 					if (searchStr(root, token))		//key words
 					{
 						string_toupper(token);
 						printf("(%s, )\n", token);
+						fprintf(out, "(%s, )\n", token);
 					}
-					else
-						printf("(%s, %s)\n", KEY_WORDS[36], token);
+					else	//identifier
+					{
+						if (strlen(token) > 0)
+						{
+							printf("(%s, %s)\n", KEY_WORDS[36], token);
+							fprintf(out, "(%s, %s)\n", KEY_WORDS[36], token);
+						}
+					}
 				}
-				else if (token[0] >= '0' && token[0] <= '9')	//token is a number
-					printf("(%s, %s)\n", KEY_WORDS[37], token);
-				else
-					;
+				else	//integer
+				{
+					printf("(%s, %s)\n", KEY_WORDS[code], token);
+					fprintf(out, "(%s, %s)\n", KEY_WORDS[code], token);
+				}
 
 				switch (temp)
 				{
 				case '+':
-					output(40, temp);
+					output(40, temp, out);
 					break;
 				case '-':
-					output(41, temp);
+					output(41, temp, out);
 					break;
 				case '*':
 					if (buffer[move_next][i + 1] == '*')
 					{
 						printf("(%s£¬ %c%c)\n", KEY_WORDS[60], temp, buffer[move_next][i + 1]);
+						fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[60], temp, buffer[move_next][i + 1]);
 						i++;
 					}
 					else
-						output(42, temp);
+						output(42, temp, out);
 					break;
 
 				case '/':
-					output(43, temp);
+					output(43, temp, out);
 					break;
 				case '=':
-					output(44, temp);
+					output(44, temp, out);
 					break;
 				case '<':
 					if (buffer[move_next][i + 1] == '=')
 					{
 						printf("(%s£¬ %c%c)\n", KEY_WORDS[47], temp, buffer[move_next][i + 1]);
+						fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[47], temp, buffer[move_next][i + 1]);
 						i++;
 					}
 					else if (buffer[move_next][i + 1] == '>')
 					{
 						printf("(%s£¬ %c%c)\n", KEY_WORDS[49], temp, buffer[move_next][i + 1]);
+						fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[49], temp, buffer[move_next][i + 1]);
 						i++;
 					}
 					else
-						output(45, temp);
+						output(45, temp, out);
 					break;
 
 				case '>':
 					if (buffer[move_next][i + 1] == '=')
 					{
 						printf("(%s£¬ %c%c)\n", KEY_WORDS[48], temp, buffer[move_next][i + 1]);
+						fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[48], temp, buffer[move_next][i + 1]);
 						i++;
 					}
 					else
-						output(46, temp);
+						output(46, temp, out);
 					break;
 
 				case '(':
-					output(50, temp);
+					output(50, temp, out);
 					break;
 				case ')':
-					output(51, temp);
+					output(51, temp, out);
 					break;
 				case ',':
-					output(52, temp);
+					output(52, temp, out);
 					break;
 				case '.':
-					output(54, temp);
+					output(54, temp, out);
 					break;
 				case ':':
 					if (buffer[move_next][i + 1] == '=')
 					{
 						printf("(%s£¬ %c%c)\n", KEY_WORDS[57], temp, buffer[move_next][i + 1]);
+						fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[57], temp, buffer[move_next][i + 1]);
 						i++;
 					}
 					else
-						output(56, temp);
+						output(56, temp, out);
 					break;
 
 				case ';':
-					output(58, temp);
+					output(58, temp, out);
 					break;
 				case '^':
-					output(59, temp);
+					output(59, temp, out);
 					break;
 				case '[':
-					output(61, temp);
+					output(61, temp, out);
 					break;
 				case ']':
-					output(62, temp);
+					output(62, temp, out);
+					break;
+				case '\n':
+					lines++;
+					break;
+				case 9:
+					head = tail;
+					tail = tail - 1;
 					break;
 				default:
 					break;
@@ -196,16 +283,7 @@ void readProgram(Trie* root)		//Read the program from source file.
 
 				head = tail;
 				tail = tail - 1;
-			}
-			else if (temp == 9)
-			{
-				head = tail;
-				tail = tail - 1;
-			}
-			else	//the next letter is not separator, go on moving to next and keep the letter into "token"
-			{
-				token[tail - head] = temp;
-				//printf("\n head = %d, tail = %d, char=%c\n", head, tail, temp);
+				code = 0;
 			}
 		}
 
@@ -214,6 +292,7 @@ void readProgram(Trie* root)		//Read the program from source file.
 
 		move_next = (move_next + 1) % 2;
 	}
+	fclose(out);
 	fclose(fp);
 	return;
 }
