@@ -62,6 +62,7 @@ bool isSeparator(char getChar)	//return "true" while separator
 	case ' ':
 	case '\n':
 	case 9:
+	case '\0':
 		return true;
 	default:
 		return false;
@@ -78,8 +79,10 @@ void output(int index, char temp, FILE* out)
 
 void readProgram(Trie* root)		//Read the program from source file.
 {
-	FILE* fp = fopen("program.txt", "r");
-	FILE* out = fopen("Lexical.txt", "w");
+	//FILE* fp = fopen("program.txt", "r");
+	FILE* fp = fopen("programA.txt", "r");
+	//FILE* out = fopen("Lexical.txt", "w");
+	FILE* out = fopen("LexicalA.txt", "w");
 
 	int move_next = 0, head, tail;
 	int realGet, i, code=0;
@@ -95,7 +98,7 @@ void readProgram(Trie* root)		//Read the program from source file.
 		realGet = fread(buffer[move_next], 1, 2047, fp);
 		buffer[move_next][realGet] = '\0';
 
-		for (i = 0; i < realGet; i++)
+		for (i = 0; i < realGet+1; i++)
 		{
 			tail++;
 			temp = buffer[move_next][i];
@@ -286,7 +289,6 @@ void readProgram(Trie* root)		//Read the program from source file.
 				code = 0;
 			}
 		}
-
 		if (realGet < 2047)
 			break;
 
