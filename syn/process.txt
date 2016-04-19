@@ -1,123 +1,1030 @@
 
 The input token is: PROGRAM
+# 
+0 
 shift 7
 
 The input token is: IDENTIFIER
+# PROGRAM 
+0 7 
 shift 17
 
 The input token is: LPAREN
+# PROGRAM IDENTIFIER 
+0 7 17 
 reduce identifier -> IDENTIFIER 
 
 The input token is: LPAREN
+# PROGRAM identifier 
+0 7 16 
 shift 28
 
 The input token is: IDENTIFIER
+# PROGRAM identifier LPAREN 
+0 7 16 28 
 shift 76
 
 The input token is: COMMA
+# PROGRAM identifier LPAREN IDENTIFIER 
+0 7 16 28 76 
 reduce identifier -> IDENTIFIER 
 
 The input token is: COMMA
+# PROGRAM identifier LPAREN identifier 
+0 7 16 28 74 
 reduce identifier_list -> identifier 
 
 The input token is: COMMA
+# PROGRAM identifier LPAREN identifier_list 
+0 7 16 28 75 
 shift 99
 
 The input token is: IDENTIFIER
+# PROGRAM identifier LPAREN identifier_list COMMA 
+0 7 16 28 75 99 
 reduce comma -> COMMA 
 
 The input token is: IDENTIFIER
+# PROGRAM identifier LPAREN identifier_list comma 
+0 7 16 28 75 173 
 shift 76
 
 The input token is: RPAREN
+# PROGRAM identifier LPAREN identifier_list comma IDENTIFIER 
+0 7 16 28 75 173 76 
 reduce identifier -> IDENTIFIER 
 
 The input token is: RPAREN
+# PROGRAM identifier LPAREN identifier_list comma identifier 
+0 7 16 28 75 173 261 
 reduce identifier_list -> identifier_list comma identifier 
 
 The input token is: RPAREN
+# PROGRAM identifier LPAREN identifier_list 
+0 7 16 28 75 
 shift 174
 
 The input token is: SEMICOLON
+# PROGRAM identifier LPAREN identifier_list RPAREN 
+0 7 16 28 75 174 
 reduce program_heading -> PROGRAM identifier LPAREN identifier_list RPAREN 
 
 The input token is: SEMICOLON
+# program_heading 
+0 4 
 shift 9
 
 The input token is: VAR
+# program_heading SEMICOLON 
+0 4 9 
 reduce semicolon -> SEMICOLON 
 
 The input token is: VAR
+# program_heading semicolon 
+0 4 8 
 reduce label_declaration_part -> ¦Å 
 
 The input token is: VAR
+# program_heading semicolon label_declaration_part 
+0 4 8 19 
 reduce constant_definition_part -> ¦Å 
 
 The input token is: VAR
+# program_heading semicolon label_declaration_part constant_definition_part 
+0 4 8 19 30 
 reduce type_definition_part -> ¦Å 
 
 The input token is: VAR
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part 
+0 4 8 19 30 77 
 shift 176
 
 The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR 
+0 4 8 19 30 77 176 
 shift 50
 
 The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR IDENTIFIER 
+0 4 8 19 30 77 176 50 
 reduce identifier -> IDENTIFIER 
 
 The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier 
+0 4 8 19 30 77 176 46 
 reduce identifier_list -> identifier 
 
 The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list 
+0 4 8 19 30 77 176 47 
 shift 99
 
 The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list COMMA 
+0 4 8 19 30 77 176 47 99 
 reduce comma -> COMMA 
 
 The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma 
+0 4 8 19 30 77 176 47 97 
 shift 50
 
 The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma IDENTIFIER 
+0 4 8 19 30 77 176 47 97 50 
 reduce identifier -> IDENTIFIER 
 
 The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma identifier 
+0 4 8 19 30 77 176 47 97 210 
 reduce identifier_list -> identifier_list comma identifier 
 
 The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list 
+0 4 8 19 30 77 176 47 
 shift 99
 
 The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list COMMA 
+0 4 8 19 30 77 176 47 99 
 reduce comma -> COMMA 
 
 The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma 
+0 4 8 19 30 77 176 47 97 
 shift 50
 
 The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma IDENTIFIER 
+0 4 8 19 30 77 176 47 97 50 
 reduce identifier -> IDENTIFIER 
 
 The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma identifier 
+0 4 8 19 30 77 176 47 97 210 
 reduce identifier_list -> identifier_list comma identifier 
 
 The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list 
+0 4 8 19 30 77 176 47 
 shift 99
 
 The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list COMMA 
+0 4 8 19 30 77 176 47 99 
 reduce comma -> COMMA 
 
 The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma 
+0 4 8 19 30 77 176 47 97 
 shift 50
 
 The input token is: COLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma IDENTIFIER 
+0 4 8 19 30 77 176 47 97 50 
 reduce identifier -> IDENTIFIER 
 
 The input token is: COLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma identifier 
+0 4 8 19 30 77 176 47 97 210 
 reduce identifier_list -> identifier_list comma identifier 
 
 The input token is: COLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list 
+0 4 8 19 30 77 176 47 
 shift 98
 
-The input token is: REALNUMBER
-shift 127
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list COLON 
+0 4 8 19 30 77 176 47 98 
+shift 121
 
 The input token is: SEMICOLON
-Syntax error: action is wrong!
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list COLON IDENTIFIER 
+0 4 8 19 30 77 176 47 98 121 
+reduce identifier -> IDENTIFIER 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list COLON identifier 
+0 4 8 19 30 77 176 47 98 102 
+reduce type_denoter -> identifier 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list COLON type_denoter 
+0 4 8 19 30 77 176 47 98 211 
+reduce variable_declaration -> identifier_list COLON type_denoter 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR variable_declaration 
+0 4 8 19 30 77 176 49 
+reduce variable_declaration_list -> variable_declaration 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR variable_declaration_list 
+0 4 8 19 30 77 176 264 
+shift 352
+
+The input token is: PBEGIN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR variable_declaration_list SEMICOLON 
+0 4 8 19 30 77 176 264 352 
+reduce semicolon -> SEMICOLON 
+
+The input token is: PBEGIN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR variable_declaration_list semicolon 
+0 4 8 19 30 77 176 264 351 
+reduce variable_declaration_part -> VAR variable_declaration_list semicolon 
+
+The input token is: PBEGIN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part 
+0 4 8 19 30 77 175 
+reduce procedure_and_function_declaration_part -> ¦Å 
+
+The input token is: PBEGIN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part 
+0 4 8 19 30 77 175 262 
+shift 348
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN 
+0 4 8 19 30 77 175 262 348 
+shift 437
+
+The input token is: LPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN IDENTIFIER 
+0 4 8 19 30 77 175 262 348 437 
+reduce identifier -> IDENTIFIER 
+
+The input token is: LPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier 
+0 4 8 19 30 77 175 262 348 408 
+shift 494
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN 
+0 4 8 19 30 77 175 262 348 408 494 
+shift 677
+
+The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN IDENTIFIER 
+0 4 8 19 30 77 175 262 348 408 494 677 
+reduce identifier -> IDENTIFIER 
+
+The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN identifier 
+0 4 8 19 30 77 175 262 348 408 494 656 
+reduce variable_access -> identifier 
+
+The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN variable_access 
+0 4 8 19 30 77 175 262 348 408 494 659 
+reduce primary -> variable_access 
+
+The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN primary 
+0 4 8 19 30 77 175 262 348 408 494 669 
+reduce exponentiation -> primary 
+
+The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN exponentiation 
+0 4 8 19 30 77 175 262 348 408 494 668 
+reduce factor -> exponentiation 
+
+The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN factor 
+0 4 8 19 30 77 175 262 348 408 494 667 
+reduce term -> factor 
+
+The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN term 
+0 4 8 19 30 77 175 262 348 408 494 666 
+reduce simple_expression -> term 
+
+The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN simple_expression 
+0 4 8 19 30 77 175 262 348 408 494 665 
+reduce expression -> simple_expression 
+
+The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN expression 
+0 4 8 19 30 77 175 262 348 408 494 660 
+reduce actual_parameter -> expression 
+
+The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter 
+0 4 8 19 30 77 175 262 348 408 494 664 
+reduce actual_parameter_list -> actual_parameter 
+
+The input token is: COMMA
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list 
+0 4 8 19 30 77 175 262 348 408 494 663 
+shift 890
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list COMMA 
+0 4 8 19 30 77 175 262 348 408 494 663 890 
+reduce comma -> COMMA 
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list comma 
+0 4 8 19 30 77 175 262 348 408 494 663 889 
+shift 677
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list comma IDENTIFIER 
+0 4 8 19 30 77 175 262 348 408 494 663 889 677 
+reduce identifier -> IDENTIFIER 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list comma identifier 
+0 4 8 19 30 77 175 262 348 408 494 663 889 656 
+reduce variable_access -> identifier 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list comma variable_access 
+0 4 8 19 30 77 175 262 348 408 494 663 889 659 
+reduce primary -> variable_access 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list comma primary 
+0 4 8 19 30 77 175 262 348 408 494 663 889 669 
+reduce exponentiation -> primary 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list comma exponentiation 
+0 4 8 19 30 77 175 262 348 408 494 663 889 668 
+reduce factor -> exponentiation 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list comma factor 
+0 4 8 19 30 77 175 262 348 408 494 663 889 667 
+reduce term -> factor 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list comma term 
+0 4 8 19 30 77 175 262 348 408 494 663 889 666 
+reduce simple_expression -> term 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list comma simple_expression 
+0 4 8 19 30 77 175 262 348 408 494 663 889 665 
+reduce expression -> simple_expression 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list comma expression 
+0 4 8 19 30 77 175 262 348 408 494 663 889 660 
+reduce actual_parameter -> expression 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list comma actual_parameter 
+0 4 8 19 30 77 175 262 348 408 494 663 889 1172 
+reduce actual_parameter_list -> actual_parameter_list comma actual_parameter 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list 
+0 4 8 19 30 77 175 262 348 408 494 663 
+shift 891
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier LPAREN actual_parameter_list RPAREN 
+0 4 8 19 30 77 175 262 348 408 494 663 891 
+reduce params -> LPAREN actual_parameter_list RPAREN 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier params 
+0 4 8 19 30 77 175 262 348 408 493 
+reduce procedure_statement -> identifier params 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN procedure_statement 
+0 4 8 19 30 77 175 262 348 418 
+reduce non_labeled_closed_statement -> procedure_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN non_labeled_closed_statement 
+0 4 8 19 30 77 175 262 348 416 
+reduce closed_statement -> non_labeled_closed_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN closed_statement 
+0 4 8 19 30 77 175 262 348 414 
+reduce statement -> closed_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement 
+0 4 8 19 30 77 175 262 348 412 
+reduce statement_sequence -> statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence 
+0 4 8 19 30 77 175 262 348 411 
+shift 498
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence SEMICOLON 
+0 4 8 19 30 77 175 262 348 411 498 
+reduce semicolon -> SEMICOLON 
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon 
+0 4 8 19 30 77 175 262 348 411 496 
+shift 437
+
+The input token is: ASSIGNMENT
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IDENTIFIER 
+0 4 8 19 30 77 175 262 348 411 496 437 
+reduce identifier -> IDENTIFIER 
+
+The input token is: ASSIGNMENT
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier 
+0 4 8 19 30 77 175 262 348 411 496 408 
+reduce variable_access -> identifier 
+
+The input token is: ASSIGNMENT
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access 
+0 4 8 19 30 77 175 262 348 411 496 430 
+shift 499
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT 
+0 4 8 19 30 77 175 262 348 411 496 430 499 
+shift 705
+
+The input token is: PLUS
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT IDENTIFIER 
+0 4 8 19 30 77 175 262 348 411 496 430 499 705 
+reduce identifier -> IDENTIFIER 
+
+The input token is: PLUS
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT identifier 
+0 4 8 19 30 77 175 262 348 411 496 430 499 686 
+reduce variable_access -> identifier 
+
+The input token is: PLUS
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT variable_access 
+0 4 8 19 30 77 175 262 348 411 496 430 499 689 
+reduce primary -> variable_access 
+
+The input token is: PLUS
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT primary 
+0 4 8 19 30 77 175 262 348 411 496 430 499 697 
+reduce exponentiation -> primary 
+
+The input token is: PLUS
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT exponentiation 
+0 4 8 19 30 77 175 262 348 411 496 430 499 696 
+reduce factor -> exponentiation 
+
+The input token is: PLUS
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT factor 
+0 4 8 19 30 77 175 262 348 411 496 430 499 695 
+reduce term -> factor 
+
+The input token is: PLUS
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT term 
+0 4 8 19 30 77 175 262 348 411 496 430 499 694 
+reduce simple_expression -> term 
+
+The input token is: PLUS
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT simple_expression 
+0 4 8 19 30 77 175 262 348 411 496 430 499 693 
+shift 758
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT simple_expression PLUS 
+0 4 8 19 30 77 175 262 348 411 496 430 499 693 758 
+reduce addop -> PLUS 
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT simple_expression addop 
+0 4 8 19 30 77 175 262 348 411 496 430 499 693 907 
+shift 705
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT simple_expression addop IDENTIFIER 
+0 4 8 19 30 77 175 262 348 411 496 430 499 693 907 705 
+reduce identifier -> IDENTIFIER 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT simple_expression addop identifier 
+0 4 8 19 30 77 175 262 348 411 496 430 499 693 907 686 
+reduce variable_access -> identifier 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT simple_expression addop variable_access 
+0 4 8 19 30 77 175 262 348 411 496 430 499 693 907 689 
+reduce primary -> variable_access 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT simple_expression addop primary 
+0 4 8 19 30 77 175 262 348 411 496 430 499 693 907 697 
+reduce exponentiation -> primary 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT simple_expression addop exponentiation 
+0 4 8 19 30 77 175 262 348 411 496 430 499 693 907 696 
+reduce factor -> exponentiation 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT simple_expression addop factor 
+0 4 8 19 30 77 175 262 348 411 496 430 499 693 907 695 
+reduce term -> factor 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT simple_expression addop term 
+0 4 8 19 30 77 175 262 348 411 496 430 499 693 907 1230 
+reduce simple_expression -> simple_expression addop term 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT simple_expression 
+0 4 8 19 30 77 175 262 348 411 496 430 499 693 
+reduce expression -> simple_expression 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT expression 
+0 4 8 19 30 77 175 262 348 411 496 430 499 690 
+reduce assignment_statement -> variable_access ASSIGNMENT expression 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon assignment_statement 
+0 4 8 19 30 77 175 262 348 411 496 417 
+reduce non_labeled_closed_statement -> assignment_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon non_labeled_closed_statement 
+0 4 8 19 30 77 175 262 348 411 496 416 
+reduce closed_statement -> non_labeled_closed_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon closed_statement 
+0 4 8 19 30 77 175 262 348 411 496 414 
+reduce statement -> closed_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon statement 
+0 4 8 19 30 77 175 262 348 411 496 685 
+reduce statement_sequence -> statement_sequence semicolon statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence 
+0 4 8 19 30 77 175 262 348 411 
+shift 498
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence SEMICOLON 
+0 4 8 19 30 77 175 262 348 411 498 
+reduce semicolon -> SEMICOLON 
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon 
+0 4 8 19 30 77 175 262 348 411 496 
+shift 437
+
+The input token is: LPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IDENTIFIER 
+0 4 8 19 30 77 175 262 348 411 496 437 
+reduce identifier -> IDENTIFIER 
+
+The input token is: LPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier 
+0 4 8 19 30 77 175 262 348 411 496 408 
+shift 494
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier LPAREN 
+0 4 8 19 30 77 175 262 348 411 496 408 494 
+shift 677
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier LPAREN IDENTIFIER 
+0 4 8 19 30 77 175 262 348 411 496 408 494 677 
+reduce identifier -> IDENTIFIER 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier LPAREN identifier 
+0 4 8 19 30 77 175 262 348 411 496 408 494 656 
+reduce variable_access -> identifier 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier LPAREN variable_access 
+0 4 8 19 30 77 175 262 348 411 496 408 494 659 
+reduce primary -> variable_access 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier LPAREN primary 
+0 4 8 19 30 77 175 262 348 411 496 408 494 669 
+reduce exponentiation -> primary 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier LPAREN exponentiation 
+0 4 8 19 30 77 175 262 348 411 496 408 494 668 
+reduce factor -> exponentiation 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier LPAREN factor 
+0 4 8 19 30 77 175 262 348 411 496 408 494 667 
+reduce term -> factor 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier LPAREN term 
+0 4 8 19 30 77 175 262 348 411 496 408 494 666 
+reduce simple_expression -> term 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier LPAREN simple_expression 
+0 4 8 19 30 77 175 262 348 411 496 408 494 665 
+reduce expression -> simple_expression 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier LPAREN expression 
+0 4 8 19 30 77 175 262 348 411 496 408 494 660 
+reduce actual_parameter -> expression 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier LPAREN actual_parameter 
+0 4 8 19 30 77 175 262 348 411 496 408 494 664 
+reduce actual_parameter_list -> actual_parameter 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier LPAREN actual_parameter_list 
+0 4 8 19 30 77 175 262 348 411 496 408 494 663 
+shift 891
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier LPAREN actual_parameter_list RPAREN 
+0 4 8 19 30 77 175 262 348 411 496 408 494 663 891 
+reduce params -> LPAREN actual_parameter_list RPAREN 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier params 
+0 4 8 19 30 77 175 262 348 411 496 408 493 
+reduce procedure_statement -> identifier params 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon procedure_statement 
+0 4 8 19 30 77 175 262 348 411 496 418 
+reduce non_labeled_closed_statement -> procedure_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon non_labeled_closed_statement 
+0 4 8 19 30 77 175 262 348 411 496 416 
+reduce closed_statement -> non_labeled_closed_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon closed_statement 
+0 4 8 19 30 77 175 262 348 411 496 414 
+reduce statement -> closed_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon statement 
+0 4 8 19 30 77 175 262 348 411 496 685 
+reduce statement_sequence -> statement_sequence semicolon statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence 
+0 4 8 19 30 77 175 262 348 411 
+shift 498
+
+The input token is: FOR
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence SEMICOLON 
+0 4 8 19 30 77 175 262 348 411 498 
+reduce semicolon -> SEMICOLON 
+
+The input token is: FOR
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon 
+0 4 8 19 30 77 175 262 348 411 496 
+shift 435
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR 
+0 4 8 19 30 77 175 262 348 411 496 435 
+shift 533
+
+The input token is: ASSIGNMENT
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR IDENTIFIER 
+0 4 8 19 30 77 175 262 348 411 496 435 533 
+reduce identifier -> IDENTIFIER 
+
+The input token is: ASSIGNMENT
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR identifier 
+0 4 8 19 30 77 175 262 348 411 496 435 531 
+reduce control_variable -> identifier 
+
+The input token is: ASSIGNMENT
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable 
+0 4 8 19 30 77 175 262 348 411 496 435 532 
+shift 813
+
+The input token is: REALNUMBER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 
+shift 1021
+
+The input token is: TO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT REALNUMBER 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 1021 
+reduce unsigned_real -> REALNUMBER 
+
+The input token is: TO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT unsigned_real 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 1013 
+reduce unsigned_number -> unsigned_real 
+
+The input token is: TO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT unsigned_number 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 1011 
+reduce unsigned_constant -> unsigned_number 
+
+The input token is: TO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT unsigned_constant 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 998 
+reduce primary -> unsigned_constant 
+
+The input token is: TO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT primary 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 1008 
+reduce exponentiation -> primary 
+
+The input token is: TO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT exponentiation 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 1007 
+reduce factor -> exponentiation 
+
+The input token is: TO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT factor 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 1006 
+reduce term -> factor 
+
+The input token is: TO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT term 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 1005 
+reduce simple_expression -> term 
+
+The input token is: TO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT simple_expression 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 1004 
+reduce expression -> simple_expression 
+
+The input token is: TO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT expression 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 1001 
+reduce initial_value -> expression 
+
+The input token is: TO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 
+shift 1354
+
+The input token is: REALNUMBER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value TO 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1354 
+reduce direction -> TO 
+
+The input token is: REALNUMBER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 
+shift 620
+
+The input token is: DO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction REALNUMBER 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 620 
+reduce unsigned_real -> REALNUMBER 
+
+The input token is: DO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction unsigned_real 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 612 
+reduce unsigned_number -> unsigned_real 
+
+The input token is: DO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction unsigned_number 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 610 
+reduce unsigned_constant -> unsigned_number 
+
+The input token is: DO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction unsigned_constant 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 597 
+reduce primary -> unsigned_constant 
+
+The input token is: DO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction primary 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 607 
+reduce exponentiation -> primary 
+
+The input token is: DO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction exponentiation 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 606 
+reduce factor -> exponentiation 
+
+The input token is: DO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction factor 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 605 
+reduce term -> factor 
+
+The input token is: DO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction term 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 604 
+reduce simple_expression -> term 
+
+The input token is: DO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction simple_expression 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 603 
+reduce expression -> simple_expression 
+
+The input token is: DO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction expression 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1559 
+reduce final_value -> expression 
+
+The input token is: DO
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 
+shift 1797
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 
+shift 437
+
+The input token is: LPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO IDENTIFIER 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 437 
+reduce identifier -> IDENTIFIER 
+
+The input token is: LPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 
+shift 494
+
+The input token is: IDENTIFIER
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier LPAREN 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 494 
+shift 677
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier LPAREN IDENTIFIER 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 494 677 
+reduce identifier -> IDENTIFIER 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier LPAREN identifier 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 494 656 
+reduce variable_access -> identifier 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier LPAREN variable_access 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 494 659 
+reduce primary -> variable_access 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier LPAREN primary 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 494 669 
+reduce exponentiation -> primary 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier LPAREN exponentiation 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 494 668 
+reduce factor -> exponentiation 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier LPAREN factor 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 494 667 
+reduce term -> factor 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier LPAREN term 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 494 666 
+reduce simple_expression -> term 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier LPAREN simple_expression 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 494 665 
+reduce expression -> simple_expression 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier LPAREN expression 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 494 660 
+reduce actual_parameter -> expression 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier LPAREN actual_parameter 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 494 664 
+reduce actual_parameter_list -> actual_parameter 
+
+The input token is: RPAREN
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier LPAREN actual_parameter_list 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 494 663 
+shift 891
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier LPAREN actual_parameter_list RPAREN 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 494 663 891 
+reduce params -> LPAREN actual_parameter_list RPAREN 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier params 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 493 
+reduce procedure_statement -> identifier params 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO procedure_statement 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 418 
+reduce non_labeled_closed_statement -> procedure_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO non_labeled_closed_statement 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 416 
+reduce closed_statement -> non_labeled_closed_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO closed_statement 
+0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 1933 
+reduce closed_for_statement -> FOR control_variable ASSIGNMENT initial_value direction final_value DO closed_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon closed_for_statement 
+0 4 8 19 30 77 175 262 348 411 496 425 
+reduce non_labeled_closed_statement -> closed_for_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon non_labeled_closed_statement 
+0 4 8 19 30 77 175 262 348 411 496 416 
+reduce closed_statement -> non_labeled_closed_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon closed_statement 
+0 4 8 19 30 77 175 262 348 411 496 414 
+reduce statement -> closed_statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon statement 
+0 4 8 19 30 77 175 262 348 411 496 685 
+reduce statement_sequence -> statement_sequence semicolon statement 
+
+The input token is: SEMICOLON
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence 
+0 4 8 19 30 77 175 262 348 411 
+shift 498
+
+The input token is: END
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence SEMICOLON 
+0 4 8 19 30 77 175 262 348 411 498 
+reduce semicolon -> SEMICOLON 
+
+The input token is: END
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon 
+0 4 8 19 30 77 175 262 348 411 496 
+reduce non_labeled_closed_statement -> ¦Å 
+
+The input token is: END
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon non_labeled_closed_statement 
+0 4 8 19 30 77 175 262 348 411 496 416 
+reduce closed_statement -> non_labeled_closed_statement 
+
+The input token is: END
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon closed_statement 
+0 4 8 19 30 77 175 262 348 411 496 414 
+reduce statement -> closed_statement 
+
+The input token is: END
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon statement 
+0 4 8 19 30 77 175 262 348 411 496 685 
+reduce statement_sequence -> statement_sequence semicolon statement 
+
+The input token is: END
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence 
+0 4 8 19 30 77 175 262 348 411 
+shift 497
+
+The input token is: DOT
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence END 
+0 4 8 19 30 77 175 262 348 411 497 
+reduce compound_statement -> PBEGIN statement_sequence END 
+
+The input token is: DOT
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part compound_statement 
+0 4 8 19 30 77 175 262 347 
+reduce statement_part -> compound_statement 
+
+The input token is: DOT
+# program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part statement_part 
+0 4 8 19 30 77 175 262 346 
+reduce block -> label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part statement_part 
+
+The input token is: DOT
+# program_heading semicolon block 
+0 4 8 18 
+shift 29
+
+The input token is: $
+# program_heading semicolon block DOT 
+0 4 8 18 29 
+reduce program -> program_heading semicolon block DOT 
+
+The input token is: $
+# program 
+0 2 
+reduce file -> program 
+
+The input token is: $
+# file 
+0 1 
+ACCEPT!

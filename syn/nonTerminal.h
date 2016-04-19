@@ -21,6 +21,7 @@ void popNames();		//pop the top of the names
 char* topNames();	//return the top string of the names
 int sizeNames();		//return the size of the names
 void showNames();
+void showNamesFile(FILE* out);
 void testNames();
 void freeNames();	//free the room for names
 

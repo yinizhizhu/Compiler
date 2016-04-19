@@ -15,6 +15,7 @@ void popStates();	//pop the top of the states
 int topStates();		//return the top of the states
 int sizeStates();	//return the size of the states have be stored
 void showStates();
+void showStatesFile(FILE* out);
 void testStates();
 void freeStates();	//free the room for the states
 

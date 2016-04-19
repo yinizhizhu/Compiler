@@ -61,6 +61,14 @@ void showStates()
 	printf("\n");
 }
 
+void showStatesFile(FILE* out)
+{
+	int i;
+	for (i = 0; i <= stateTop; i++)
+		fprintf(out, "%d ", states[i]);
+	fprintf(out, "\n");
+}
+
 void testStates()
 {
 	int j = 1;

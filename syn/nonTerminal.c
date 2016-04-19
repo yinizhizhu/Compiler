@@ -61,6 +61,14 @@ void showNames()
 	printf("\n");
 }
 
+void showNamesFile(FILE* out)
+{
+	int i = 0;
+	for (; i <= nameTop; i++)
+		fprintf(out, "%s ", names[i].val);
+	fprintf(out, "\n");
+}
+
 void testNames()
 {
 	int i = 0;

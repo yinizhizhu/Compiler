@@ -94,8 +94,8 @@ void control()		//control the shift-reduce-accpet
 			return;
 		}
 		s = getS(x, y);
-		showNames();
-		showStates();
+		showNamesFile(out);
+		showStatesFile(out);
 		if (s == -1)	//error
 		{
 			fprintf(out, "Syntax error: action is wrong!\n");
@@ -129,12 +129,35 @@ void control()		//control the shift-reduce-accpet
 		}
 	}
 	printf("The last step!\n");
-	x = topStates();
-	y = getIndex("$");
-	if (getS(x, y) == 0)
-		fprintf(out, "ACCEPT!\n");
-	else
-		fprintf(out, "Syntax error!\n");
+	strcpy(token, "$");
+	y = getIndex(token);
+	while (sizeStates() > 1)
+	{
+		fprintf(out, "\nThe input token is: %s\n", token);
+		x = topStates();
+		s = getS(x, y);
+		showNamesFile(out);
+		showStatesFile(out);
+		if (s == 0)
+		{
+			fprintf(out, "ACCEPT!\n");
+			return;
+		}
+		else if (s == 1)
+		{
+			if (!reduce(y))
+			{
+				fprintf(out, "Reduce is error!\n");
+				fclose(fp);
+				return;
+			}
+		}
+		else
+		{
+			fprintf(out, "Syntax error!\n");
+			return;
+		}
+	}
 	fclose(fp);
 	return;
 }
