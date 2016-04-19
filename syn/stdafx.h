@@ -73,4 +73,7 @@ int getIndex(char* token);		//return the col of the token in the table
 void shift(int index, char* token);		//shift, Just shift the token into the table
 bool reduce(int index);		//reduce
 bool go(char* token);			//goto the next state
-bool error();
+bool error(char* info);
+void testKey();
+
+FILE* out;

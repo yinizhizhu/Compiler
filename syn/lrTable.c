@@ -23,14 +23,15 @@ void initTable() //let the table initial
 		for (j = 0; j < ROOM_COL; j++)
 		{
 			table[i][j].state = -1;
-			if (j <= 65)
+			if (j <= 65)	//terminal token
 				table[i][j].num = 0;
-			else
+			else	//nonterminal token
 				table[i][j].num = -1;
 			table[i][j].container = NULL;
 		}
 	}
 	printf("Get the room for table!\n");
+	readTable();
 	return;
 }
 
@@ -75,9 +76,9 @@ void insertTd(char container[10][STRING_LENGTH], int* row, int* col, int move) /
 {
 	int i, len=move-1;
 	int x = *row, y = *col;
-	if (move == 0)
+	if (move <= 0)
 		return;
-	if (validXY(*row, *col) == 0)
+	if (x < 0 || x > ROOM_ROW || y < 0 || y > ROOM_COL)
 		return;
 	if (strcmp(REDUCE, container[0]) == 0)
 	{
@@ -93,6 +94,12 @@ void insertTd(char container[10][STRING_LENGTH], int* row, int* col, int move) /
 		for (i = 0; i < len; i++)
 		{
 			table[x][y].container[i] = (char*)malloc(STRING_LENGTH*sizeof(char));
+			if (table[x][y].container[i] == NULL)
+			{
+				printf("Not enough room for the table[x][y].container[i]!\n");
+				freeTable();
+				return;
+			}
 			strcpy(table[x][y].container[i], container[i + 1]);
 		}
 		(*col)++;
@@ -109,6 +116,12 @@ void insertTd(char container[10][STRING_LENGTH], int* row, int* col, int move) /
 			return;
 		}
 		table[x][y].container[0] = (char*)malloc(STRING_LENGTH*sizeof(char));
+		if (table[x][y].container[0] == NULL)
+		{
+			printf("Not enough room for the table[x][y].container[0]!\n");
+			freeTable();
+			return;
+		}
 		strcpy(table[x][y].container[0], container[1]);
 		(*col)++;
 	}
@@ -124,6 +137,7 @@ void insertTd(char container[10][STRING_LENGTH], int* row, int* col, int move) /
 	}
 	else if (strcmp(LEE, container[0]) == 0)
 	{
+		//printf("%d, %d\n", x, y);
 		(*row)++;
 		*col = 0;
 	}
@@ -189,15 +203,10 @@ void testTable()
 {
 	int j = 0;
 	char** tmp;
-	readTable();
 	printf("%d:\n", getS(0, 45));
 	tmp = getContainer(0, 45);
 	for (; j < getNum(0, 45); j++)
 		printf("%s %d\n", tmp[j], strlen(tmp[j]));
-	for (j = 65; j < 200; j++)
-		if (getNum(0, j) >= 0)
-			printf("%d ", getNum(0, j));
-	printf("\n");
 	//for (; j < ROOM_COL; j++)
 	//	printf("%d\n", table[0][j].state);
 }

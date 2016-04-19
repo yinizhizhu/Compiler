@@ -1,0 +1,123 @@
+
+The input token is: PROGRAM
+shift 7
+
+The input token is: IDENTIFIER
+shift 17
+
+The input token is: LPAREN
+reduce identifier -> IDENTIFIER 
+
+The input token is: LPAREN
+shift 28
+
+The input token is: IDENTIFIER
+shift 76
+
+The input token is: COMMA
+reduce identifier -> IDENTIFIER 
+
+The input token is: COMMA
+reduce identifier_list -> identifier 
+
+The input token is: COMMA
+shift 99
+
+The input token is: IDENTIFIER
+reduce comma -> COMMA 
+
+The input token is: IDENTIFIER
+shift 76
+
+The input token is: RPAREN
+reduce identifier -> IDENTIFIER 
+
+The input token is: RPAREN
+reduce identifier_list -> identifier_list comma identifier 
+
+The input token is: RPAREN
+shift 174
+
+The input token is: SEMICOLON
+reduce program_heading -> PROGRAM identifier LPAREN identifier_list RPAREN 
+
+The input token is: SEMICOLON
+shift 9
+
+The input token is: VAR
+reduce semicolon -> SEMICOLON 
+
+The input token is: VAR
+reduce label_declaration_part -> ¦Å 
+
+The input token is: VAR
+reduce constant_definition_part -> ¦Å 
+
+The input token is: VAR
+reduce type_definition_part -> ¦Å 
+
+The input token is: VAR
+shift 176
+
+The input token is: IDENTIFIER
+shift 50
+
+The input token is: COMMA
+reduce identifier -> IDENTIFIER 
+
+The input token is: COMMA
+reduce identifier_list -> identifier 
+
+The input token is: COMMA
+shift 99
+
+The input token is: IDENTIFIER
+reduce comma -> COMMA 
+
+The input token is: IDENTIFIER
+shift 50
+
+The input token is: COMMA
+reduce identifier -> IDENTIFIER 
+
+The input token is: COMMA
+reduce identifier_list -> identifier_list comma identifier 
+
+The input token is: COMMA
+shift 99
+
+The input token is: IDENTIFIER
+reduce comma -> COMMA 
+
+The input token is: IDENTIFIER
+shift 50
+
+The input token is: COMMA
+reduce identifier -> IDENTIFIER 
+
+The input token is: COMMA
+reduce identifier_list -> identifier_list comma identifier 
+
+The input token is: COMMA
+shift 99
+
+The input token is: IDENTIFIER
+reduce comma -> COMMA 
+
+The input token is: IDENTIFIER
+shift 50
+
+The input token is: COLON
+reduce identifier -> IDENTIFIER 
+
+The input token is: COLON
+reduce identifier_list -> identifier_list comma identifier 
+
+The input token is: COLON
+shift 98
+
+The input token is: REALNUMBER
+shift 127
+
+The input token is: SEMICOLON
+Syntax error: action is wrong!
