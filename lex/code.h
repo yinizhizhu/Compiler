@@ -2,6 +2,8 @@
 #if !defined CODE_H
 #define CODE_H
 
+#include <string.h>
+#include <stdbool.h>
 //The code of tokens
 #define AND 1
 #define ARRAY 2
@@ -67,9 +69,11 @@
 #define RS_BRAC 62
 #define Q_MARK 63
 
-#define INTEGER 64
-#define WORD 65
+#define ALL_KEY 64				//the total number of the key_word
+#define TYPE_LENGTH 42			//the length of the key word
 
-#define ALL_KEY 66				//the total number of the key_word
-#define TYPE_LENGTH 20			//the length of the key word
+#define KEY_LEGNTH 39
+
+int searchStr(const char *s);
+
 #endif

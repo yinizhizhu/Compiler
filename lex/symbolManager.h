@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #define NAME_CONTAINER_LENGTH 10000	//the length of the container of name
 
 #define N 256
@@ -31,12 +32,13 @@ typedef struct symbolNode	//the symbol list
 } symbolN;
 
 symbolN** symbolList;
-void initSymbolList();
+bool initSymbolList();
 int hashPJW(char* s);	//get the index of the string in the hash table of symbol list
 symbolN* getSymbolN(char* s);
-void insertIntoSymbolList(char* name);		//insert the identifier into the symbol list with the name of identifier
-void insertIntoSymbolList2(char* name, int typeB, int typeS, u_int address);		//insert the identifier into the symbol list with name, typeB...
-void insertIntoSymbolList3(char* name, int typeB, int typeS, u_int address, int* nextP, int lenP);		//insert the identifier into the symbol list with name, typeB...
+bool insertIntoSymbolList(char* name);		//insert the identifier into the symbol list with the name of identifier
+bool insertIntoSymbolList2(char* name, int typeB, int typeS, u_int address);		//insert the identifier into the symbol list with name, typeB...
+bool insertIntoSymbolList3(char* name, int typeB, int typeS, u_int address, int* nextP, int lenP);		//insert the identifier into the symbol list with name, typeB...
+bool error(char* info);
 void delSymbolList();
 
 #endif

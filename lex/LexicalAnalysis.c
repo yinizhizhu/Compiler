@@ -59,19 +59,20 @@ bool isSeparator(char getChar)	//return "true" while separator
 void output(int index, char temp, FILE* out)
 {
 	printf("(%s, %c)\n", KEY_WORDS[index], temp);
-	fprintf(out, "(%s, %c)\n", KEY_WORDS[index], temp);
+	fprintf(out, "%s\n", KEY_WORDS[index], temp);
+	//fprintf(out, "(%s, %c)\n", KEY_WORDS[index], temp);
 	return;
 }
 
-void readProgram(Trie* root)		//Read the program from source file.
+void readProgram()		//Read the program from source file.
 {
-	FILE* fp = fopen("program.txt", "r");
-	FILE* out = fopen("Lexical.txt", "w");
+	FILE* fp = fopen("connectWithSyn.txt", "r");
+	FILE* out = fopen("inputSyn.txt", "w");
 
 	int move_next = 0, head, tail;
 	int realGet, i, code=0;
 
-	int lines = 1;		//The lines the cursor lands
+	int lines = 1, index;		//The lines the cursor lands
 
 	char buffer[2][BUFFER], token[N], temp;
 
@@ -148,25 +149,28 @@ void readProgram(Trie* root)		//Read the program from source file.
 					//printf("%s\n", token);
 					if (code == 0)	//Token is not number or id
 					{
-						if (searchStr(root, token))		//key words
+						index = searchStr(token);
+						if (index > 0)		//key words
 						{
-							stringToupper(token);
-							printf("(%s, )\n", token);
-							fprintf(out, "(%s, )\n", token);
+							printf("(%s, )\n", KEY_WORDS[index]);
+							fprintf(out, "%s\n", KEY_WORDS[index]);
+							//fprintf(out, "(%s, )\n", token);
 						}
 						else	//identifier
 						{
 							if (strlen(token) > 0)
 							{
 								printf("(%s, %s)\n", KEY_WORDS[36], token);
-								fprintf(out, "(%s, %s)\n", KEY_WORDS[36], token);
+								fprintf(out, "%s\n", KEY_WORDS[36], token);
+								//fprintf(out, "(%s, %s)\n", KEY_WORDS[36], token);
 							}
 						}
 					}
 					else	//integer
 					{
 						printf("(%s, %s)\n", KEY_WORDS[code], token);
-						fprintf(out, "(%s, %s)\n", KEY_WORDS[code], token);
+						fprintf(out, "%s\n", KEY_WORDS[code], token);
+						//fprintf(out, "(%s, %s)\n", KEY_WORDS[code], token);
 					}
 				}
 				switch (temp)
@@ -181,7 +185,8 @@ void readProgram(Trie* root)		//Read the program from source file.
 					if (buffer[move_next][i + 1] == '*')
 					{
 						printf("(%s£¬ %c%c)\n", KEY_WORDS[60], temp, buffer[move_next][i + 1]);
-						fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[60], temp, buffer[move_next][i + 1]);
+						fprintf(out, "%s\n", KEY_WORDS[60], temp, buffer[move_next][i + 1]);
+						//fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[60], temp, buffer[move_next][i + 1]);
 						i++;
 					}
 					else
@@ -198,13 +203,15 @@ void readProgram(Trie* root)		//Read the program from source file.
 					if (buffer[move_next][i + 1] == '=')
 					{
 						printf("(%s£¬ %c%c)\n", KEY_WORDS[47], temp, buffer[move_next][i + 1]);
-						fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[47], temp, buffer[move_next][i + 1]);
+						fprintf(out, "%s\n", KEY_WORDS[47], temp, buffer[move_next][i + 1]);
+						//fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[47], temp, buffer[move_next][i + 1]);
 						i++;
 					}
 					else if (buffer[move_next][i + 1] == '>')
 					{
 						printf("(%s£¬ %c%c)\n", KEY_WORDS[49], temp, buffer[move_next][i + 1]);
-						fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[49], temp, buffer[move_next][i + 1]);
+						fprintf(out, "%s\n", KEY_WORDS[49], temp, buffer[move_next][i + 1]);
+						//fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[49], temp, buffer[move_next][i + 1]);
 						i++;
 					}
 					else
@@ -215,7 +222,8 @@ void readProgram(Trie* root)		//Read the program from source file.
 					if (buffer[move_next][i + 1] == '=')
 					{
 						printf("(%s£¬ %c%c)\n", KEY_WORDS[48], temp, buffer[move_next][i + 1]);
-						fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[48], temp, buffer[move_next][i + 1]);
+						fprintf(out, "%s\n", KEY_WORDS[48], temp, buffer[move_next][i + 1]);
+						//fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[48], temp, buffer[move_next][i + 1]);
 						i++;
 					}
 					else
@@ -238,7 +246,8 @@ void readProgram(Trie* root)		//Read the program from source file.
 					if (buffer[move_next][i + 1] == '=')
 					{
 						printf("(%s£¬ %c%c)\n", KEY_WORDS[57], temp, buffer[move_next][i + 1]);
-						fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[57], temp, buffer[move_next][i + 1]);
+						fprintf(out, "%s\n", KEY_WORDS[57], temp, buffer[move_next][i + 1]);
+						//fprintf(out, "(%s£¬ %c%c)\n", KEY_WORDS[57], temp, buffer[move_next][i + 1]);
 						i++;
 					}
 					else
@@ -278,7 +287,8 @@ void readProgram(Trie* root)		//Read the program from source file.
 					}
 					token[tail - head] = '\0';
 					printf("(%s£¬ '%s')\n", KEY_WORDS[39], token);
-					fprintf(out, "(%s£¬ '%s')\n", KEY_WORDS[39], token);
+					fprintf(out, "%s\n", KEY_WORDS[39], token);
+					//fprintf(out, "(%s£¬ '%s')\n", KEY_WORDS[39], token);
 					break;
 				default:
 					break;
@@ -301,11 +311,12 @@ void readProgram(Trie* root)		//Read the program from source file.
 
 int main()
 {
-	Trie *root = NULL;
-	root = initTrie(root);	//Trie has stpred the key words
-	initSymbolList();	//Initial the symbol list
-	readProgram(root);
+	if (initSymbolList())	//Initial the symbol list
+	{
+		readProgram();
+	}
+	else
+		printf("Error in initialing!\n");
 	delSymbolList();
-	del(root);
 	return 0;
 }

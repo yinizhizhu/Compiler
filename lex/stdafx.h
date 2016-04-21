@@ -12,9 +12,27 @@
 #include <string.h>
 #include <stdbool.h>
 #include "code.h"
-#include "Trie.h"
 #include "symbolManager.h"
 #include "definedByMyself.h"
+
+//const char KEY_WORDS[ALL_KEY][TYPE_LENGTH] = { "",
+//"AND", "ARRAY", "PBEGIN", "CASE",
+//"CONST", "DIV", "DO", "DOWNTO",
+//"ELSE", "END", "PFILE", "FOR",
+//"FUNCTION", "GOTO", "IF", "IN",
+//"LABEL", "MOD", "NIL", "NOT",
+//"OF", "OR", "PACKED", "PROCEDURE",
+//"PROGRAM", "RECORD", "REPEAT", "SET",
+//"THEN", "TO", "TYPE", "UNTIL",
+//"VAR", "WHILE", "WITH", "IDENTIFIER",
+//"INT", "REALNUMBER", "CHARACTER_STRING", "PLUS",
+//"MINUS", "STAR", "SLASH", "EQUAL",
+//"LT", "GT", "LE", "GE",
+//"NOTEQUAL", "LPAREN", "RPAREN", "COMMA",
+//"P_MARK", "DOT", "DOTDOT", "COLON",
+//"ASSIGNMENT", "SEMICOLON", "UPARROW", "STARSTAR",
+//"LBRAC", "RBRAC", "Q_MARK", "INTEGER",
+//"WORD" };
 
 const char KEY_WORDS[ALL_KEY][TYPE_LENGTH] = { "",
 "AND", "ARRAY", "PBEGIN", "CASE",
@@ -26,11 +44,10 @@ const char KEY_WORDS[ALL_KEY][TYPE_LENGTH] = { "",
 "PROGRAM", "RECORD", "REPEAT", "SET",
 "THEN", "TO", "TYPE", "UNTIL",
 "VAR", "WHILE", "WITH", "IDENTIFIER",
-"INT", "REALNUMBER", "CHARACTER_STRING", "PLUS",
+"DIGSEQ", "REALNUMBER", "CHARACTER_STRING", "PLUS",
 "MINUS", "STAR", "SLASH", "EQUAL",
 "LT", "GT", "LE", "GE",
 "NOTEQUAL", "LPAREN", "RPAREN", "COMMA",
 "P_MARK", "DOT", "DOTDOT", "COLON",
 "ASSIGNMENT", "SEMICOLON", "UPARROW", "STARSTAR",
-"LBRAC", "RBRAC", "Q_MARK", "INTEGER",
-"WORD" };
+"LBRAC", "RBRAC", "Q_MARK"};
