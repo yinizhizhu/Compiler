@@ -1,12 +1,3 @@
-# Compiler
-The Implementation of Pascal Compiler with C Language.
-
-# Lexical Analysis
-
-# Syntax Analysis
-
-# Semantic Analysis
-
 * 哈尔滨工业大学（HIT）计算机科学与技术 	Compiler
 
 The Implementation of Pascal Compiler with C Language.
