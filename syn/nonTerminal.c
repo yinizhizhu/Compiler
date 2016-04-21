@@ -64,6 +64,7 @@ void showNames()
 void showNamesFile(FILE* out)
 {
 	int i = 0;
+	fprintf(out, "NamesStack: ");
 	for (; i <= nameTop; i++)
 		fprintf(out, "%s ", names[i].val);
 	fprintf(out, "\n");

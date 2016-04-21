@@ -64,6 +64,7 @@ void showStates()
 void showStatesFile(FILE* out)
 {
 	int i;
+	fprintf(out, "StatesStack: ");
 	for (i = 0; i <= stateTop; i++)
 		fprintf(out, "%d ", states[i]);
 	fprintf(out, "\n");
