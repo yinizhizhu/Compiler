@@ -8,7 +8,7 @@ The Implementation of Pascal Compiler with C Language.
 
 * Syntax Analysis:
 
-语法分析器的实现需要利用编译工作台CWB_获得LR(1)表，然后写一个总控程序即解决（需要留意Lex和Syn的连接）
+语法分析器的实现需要利用编译工作台 CWB_ 获得LR(1)表，然后写一个总控程序即解决（需要留意Lex和Syn的连接）
 
 * Semantic Analysis: 
 
