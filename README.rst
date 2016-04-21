@@ -1,14 +1,14 @@
 * 哈尔滨工业大学（HIT）计算机科学与技术 	Compiler
 
-The Implementation of Pascal Compiler with C Language.
+		The Implementation of Pascal Compiler with C Language.
 
 * Lexical Analysis:
 
-词法分析器比较简单，直接通过易懂的if语句进行分类识别
+		词法分析器比较简单，直接通过易懂的if语句进行分类识别
 
 * Syntax Analysis:
 
-语法分析器的实现需要利用编译工作台 CWB_ 获得LR(1)表，然后写一个总控程序即解决（需要留意Lex和Syn的连接）
+		语法分析器的实现需要利用编译工作台 CWB_ 获得LR(1)表，然后写一个总控程序即解决（需要留意Lex和Syn的连接）
 
 * Semantic Analysis: 
 
