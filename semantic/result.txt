@@ -1,0 +1,67 @@
+        IN   
+        STI   0
+        LOAD 0
+        OUT
+        LOAD 0
+        LOADI 10
+        EQ
+        BRF LABEL0
+        LOADI 1
+        STO 1
+        BR LABEL1
+LABEL0:
+        LOADI 2
+        STO 1
+LABEL1:
+LABEL2:
+        LOAD 0
+        LOADI 0
+        GT
+        BRF LABEL3
+        LOAD 0
+        LOADI 1
+        SUB
+        STO 0
+        LOAD 1
+        LOADI 1
+        ADD
+        STO 1
+        BR LABEL2
+LABEL3:
+        LOAD 1
+        OUT
+LABEL4:
+        LOAD 1
+        LOADI 1
+        ADD
+        STO 1
+        LOAD 1
+        LOADI 10
+        LES
+        BRF LABEL5
+        BR LABEL4
+LABEL5:
+        LOADI 0
+        STO 1
+        LOADI 0
+        STO 0
+LABEL6:
+        LOAD 0
+        LOADI 5
+        LES
+        BRF LABEL7
+        BR LABEL8
+LABEL9:
+        LOAD 0
+        LOADI 1
+        ADD
+        STO 0
+        BR LABEL6
+LABEL8:
+        LOADI 4
+        STO 1
+        BR LABEL9
+LABEL7:
+        LOAD 1
+        OUT
+        STOP

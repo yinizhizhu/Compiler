@@ -1,4 +1,4 @@
-* 哈尔滨工业大学（HIT）计算机科学与技术 	Compiler
+* 哈尔滨工业大学（HIT）计算机科学与技术 	编译原理(Compiler)
 
 		The Implementation of Pascal Compiler with C Language.
 

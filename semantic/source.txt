@@ -1,0 +1,18 @@
+{
+int a;
+int b;
+read a;
+write a;
+if (a==10) b=1; else b=2;
+while(a>0)
+{a=a-1;
+ b=b+1;
+}
+write b;
+do{
+ b=b+1;
+}while(b<10)
+b=0;
+for(a=0;a<5;a=a+1) b=4;
+write b;
+}
