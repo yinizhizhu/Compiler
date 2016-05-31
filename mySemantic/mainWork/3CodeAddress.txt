@@ -1,0 +1,15 @@
+(assignmentÓï¾ä)
+reduce assignment_statement -> variable_access ASSIGNMENT expression 
+
+
+(ifÓï¾ä)
+reduce expression -> simple_expression relop simple_expression 
+reduce assignment_statement -> variable_access ASSIGNMENT expression 
+reduce assignment_statement -> variable_access ASSIGNMENT expression 
+reduce closed_if_statement -> IF boolean_expression THEN closed_statement ELSE closed_statement 
+
+
+(forÓï¾ä)
+reduce simple_expression -> simple_expression addop term 
+reduce assignment_statement -> variable_access ASSIGNMENT expression 
+reduce closed_for_statement -> FOR control_variable ASSIGNMENT initial_value direction final_value DO closed_statement 
