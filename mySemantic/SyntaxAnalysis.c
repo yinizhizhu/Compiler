@@ -57,6 +57,7 @@ char addop[5][KEY_LENGTH] = { "simple_expression", "->", "simple_expression", "a
 char forto[3][KEY_LENGTH] = { "variable_access", "->", "identifier" };
 char forStatement[10][KEY_LENGTH] = { "closed_for_statement", "->", "FOR", "control_variable", "ASSIGNMENT", "initial_value", "direction", "final_value", "DO", "closed_statement" };
 static int tag = 0;
+char forTmp[3][KEY_LENGTH] = { "", "", "" };
 
 int getIndex(char* word)		//return the col of the word in the table
 {
@@ -79,6 +80,13 @@ void shift(int index, char* word)		//shift, Just shift the word into the table
 	return;
 }
 
+void popT(int n)
+{
+	for (int i = 0; i < n; i++)
+		popQueue();
+	return;
+}
+
 void assignmentT(int x, int y, char** container)
 {
 	int i;
@@ -94,8 +102,7 @@ void assignmentT(int x, int y, char** container)
 			insertThreeAddress(0, head->next->value, ":=", head->value);
 		else
 			pushStatement(0, head->next->value, ":=", head->value);
-		for (int i = 0; i < 2; i++)
-			popQueue();
+		popT(2);
 		showQueue();
 		showThreeAddress();
 		showStatement();
@@ -118,8 +125,7 @@ void relopT(int x, int y, char** container)
 			insertThreeAddress(5, head->next->value, ">", head->value);
 		else
 			pushStatement(5, head->next->value, ">", head->value);
-		for (int i = 0; i < 2; i++)
-			popQueue();
+		popT(2);
 		showQueue();
 		showThreeAddress();
 		showStatement();
@@ -142,8 +148,7 @@ void addopT(int x, int y, char** container)
 			insertThreeAddress(1, head->next->value, head->next->next->value, head->value);
 		else
 			pushStatement(1, head->next->value, head->next->next->value, head->value);
-		for (int i = 0; i < 3; i++)
-			popQueue();
+		popT(3);
 		showQueue();
 		showThreeAddress();
 		showStatement();
@@ -167,27 +172,6 @@ void ifT(int x, int y, char** container)
 	return;
 }
 
-void fortoT(int x, int y, char** container)
-{
-	int i;
-	for (i = 0; i < 3; i++)
-		if (strcmp(container[i], forto[i]) != 0)
-			break;
-	if (i == 10)
-	{
-		printf("fortoT\n");
-		showQueue();
-		token *head = frontQueue();
-		pushStatement(1, head->value, "<=", "i");
-		for (int i = 0; i < 1; i++)
-			popQueue();
-		showQueue();
-		showThreeAddress();
-		showStatement();
-	}
-	return;
-}
-
 void forT(int x, int y, char** container)
 {
 	int i;
@@ -197,6 +181,11 @@ void forT(int x, int y, char** container)
 	if (i == 10)
 	{
 		printf("forT\n");
+		for (int i = 0; i < 3; i++)
+			printf("%s ", forTmp[i]);
+		printf("\n");
+		pushStatement(0, forTmp[1], ":=", forTmp[0]);
+		pushStatement(6, forTmp[2], "<=", forTmp[0]);
 		addressCode *head = frontStatement();
 		insertThreeAddressP(head);
 		tag = 1;
@@ -238,19 +227,15 @@ void translate(int x, int y, char** container)
 		}
 		break;
 	case 5:	//for statement
-		if (getNum(x, y) == 5)
-			assignmentT(x, y, container);
 		break;
 	case 6:
-		if (getNum(x, y) == 3)
-			fortoT(x, y, container);
 		break;
 	case 7:
 		if (getNum(x, y) == 10)
 			forT(x, y, container);
 		else if (getNum(x, y) == 5)
 		{
-			assignmentT(x, y, container);
+			//assignmentT(x, y, container);
 			addopT(x, y, container);
 		}
 		break;
@@ -338,6 +323,10 @@ void setTag(char* word)
 			{
 				popQueue();
 				initStatement();
+				token *head = frontQueue();
+				strcpy(forTmp[0], head->value);
+				strcpy(forTmp[1], head->next->value);
+				popT(2);
 				tag = 5;
 			}
 			break;
@@ -361,6 +350,9 @@ void setTag(char* word)
 			if (strcmp(word, "TO") == 0)
 			{
 				popQueue();
+				token *head = frontQueue();
+				strcpy(forTmp[2], head->value);
+				popT(1);
 				tag = 6;
 			}
 			break;

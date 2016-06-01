@@ -3,7 +3,6 @@
 #define SYNTAXANALYSIS_H
 
 #include <stdio.h>
-// TODO:  在此处引用程序需要的其他头文件
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
@@ -23,11 +22,11 @@ bool control();		//control the shift-reduce-accpet
 int getIndex(char* word);		//return the col of the token in the table
 void shift(int index, char* word);		//shift, Just shift the token into the table
 
+void popT(int n);
 void assignmentT(int x, int y, char** container);
 void relopT(int x, int y, char** container);
 void addopT(int x, int y, char** container);
 void ifT(int x, int y, char** container);
-void forT(int x, int y, char** container);
 void fortoT(int x, int y, char** container);
 void translate(int x, int y, char** container);
 
