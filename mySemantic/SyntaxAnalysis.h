@@ -27,6 +27,7 @@ void relopT(int x, int y, char** container);
 void addopT(int x, int y, char** container);
 void ifT(int x, int y, char** container);
 void forT(int x, int y, char** container);
+void fortoT(int x, int y, char** container);
 void translate(int x, int y, char** container);
 
 bool reduce(int index);		//reduce
