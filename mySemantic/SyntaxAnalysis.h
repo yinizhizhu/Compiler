@@ -18,6 +18,7 @@
 #define KEY_COL 200	//1~199
 #define KEY_LENGTH 42
 
+void setTag(char* word);
 bool control();		//control the shift-reduce-accpet
 int getIndex(char* word);		//return the col of the token in the table
 void shift(int index, char* word);		//shift, Just shift the token into the table

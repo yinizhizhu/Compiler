@@ -57,7 +57,6 @@ char addop[5][KEY_LENGTH] = { "simple_expression", "->", "simple_expression", "a
 char forto[3][KEY_LENGTH] = { "variable_access", "->", "identifier" };
 char forStatement[10][KEY_LENGTH] = { "closed_for_statement", "->", "FOR", "control_variable", "ASSIGNMENT", "initial_value", "direction", "final_value", "DO", "closed_statement" };
 static int tag = 0;
-static int tagREP = 1;
 
 int getIndex(char* word)		//return the col of the word in the table
 {
@@ -89,6 +88,7 @@ void assignmentT(int x, int y, char** container)
 	if (i == 5)
 	{
 		printf("assignmentT\n");
+		showQueue();
 		token *head = frontQueue();
 		if (tag == 1)
 			insertThreeAddress(0, head->next->value, ":=", head->value);
@@ -96,7 +96,9 @@ void assignmentT(int x, int y, char** container)
 			pushStatement(0, head->next->value, ":=", head->value);
 		for (int i = 0; i < 2; i++)
 			popQueue();
+		showQueue();
 		showThreeAddress();
+		showStatement();
 	}
 	return;
 }
@@ -110,6 +112,7 @@ void relopT(int x, int y, char** container)
 	if (i == 5)
 	{
 		printf("relopT\n");
+		showQueue();
 		token *head = frontQueue();
 		if (tag == 1)
 			insertThreeAddress(5, head->next->value, ">", head->value);
@@ -117,6 +120,9 @@ void relopT(int x, int y, char** container)
 			pushStatement(5, head->next->value, ">", head->value);
 		for (int i = 0; i < 2; i++)
 			popQueue();
+		showQueue();
+		showThreeAddress();
+		showStatement();
 	}
 	return;
 }
@@ -130,6 +136,7 @@ void addopT(int x, int y, char** container)
 	if (i == 5)
 	{
 		printf("addopT\n");
+		showQueue();
 		token *head = frontQueue();
 		if (tag == 1)
 			insertThreeAddress(1, head->next->value, head->next->next->value, head->value);
@@ -137,6 +144,9 @@ void addopT(int x, int y, char** container)
 			pushStatement(1, head->next->value, head->next->next->value, head->value);
 		for (int i = 0; i < 3; i++)
 			popQueue();
+		showQueue();
+		showThreeAddress();
+		showStatement();
 	}
 	return;
 }
@@ -166,10 +176,14 @@ void fortoT(int x, int y, char** container)
 	if (i == 10)
 	{
 		printf("fortoT\n");
+		showQueue();
 		token *head = frontQueue();
 		pushStatement(1, head->value, "<=", "i");
 		for (int i = 0; i < 1; i++)
 			popQueue();
+		showQueue();
+		showThreeAddress();
+		showStatement();
 	}
 	return;
 }
@@ -205,9 +219,7 @@ void translate(int x, int y, char** container)
 		break;
 	case 2:	//if statement
 		if (getNum(x, y) == 5)
-		{
 			relopT(x, y, container);
-		}
 		break;
 	case 3://then statement
 		if (getNum(x, y) == 5)
@@ -218,9 +230,7 @@ void translate(int x, int y, char** container)
 		break;
 	case 4://else statement
 		if (getNum(x, y) == 8)
-		{
 			ifT(x, y, container);
-		}
 		else if (getNum(x, y) == 5)
 		{
 			assignmentT(x, y, container);
@@ -229,21 +239,15 @@ void translate(int x, int y, char** container)
 		break;
 	case 5:	//for statement
 		if (getNum(x, y) == 5)
-		{
 			assignmentT(x, y, container);
-		}
 		break;
 	case 6:
 		if (getNum(x, y) == 3)
-		{
 			fortoT(x, y, container);
-		}
 		break;
 	case 7:
 		if (getNum(x, y) == 10)
-		{
 			forT(x, y, container);
-		}
 		else if (getNum(x, y) == 5)
 		{
 			assignmentT(x, y, container);
@@ -253,6 +257,7 @@ void translate(int x, int y, char** container)
 	default:
 		break;
 	}
+	return;
 }
 
 bool reduce(int index)		//reduce
@@ -261,8 +266,7 @@ bool reduce(int index)		//reduce
 	int x = topStates(), y = index;
 	char** container = getContainer(x, y);
 
-	if (tagREP)
-		translate(x, y, container);	//translate according to the process of reducing
+	translate(x, y, container);	//translate according to the process of reducing
 
 	fprintf(out, "reduce ");
 	for (i = 0; i < getNum(x, y); i++) //output the production
@@ -312,6 +316,71 @@ bool synError(char* info)
 	return false;
 }
 
+void setTag(char* word)
+{
+	if (tag == 0)	//set the starter of the threeAddress
+	{
+		if (strcmp(word, "PBEGIN") == 0)
+			tag = 1;
+	}
+	else
+	{
+		switch (tag)
+		{
+		case 1:
+			if (strcmp(word, "IF") == 0)
+			{
+				popQueue();
+				initStatement();
+				tag = 2;
+			}
+			else if (strcmp(word, "FOR") == 0)
+			{
+				popQueue();
+				initStatement();
+				tag = 5;
+			}
+			break;
+		case 2:
+			if (strcmp(word, "THEN") == 0)
+			{
+				popQueue();
+				tag = 3;
+			}
+			break;
+		case 3:
+			if (strcmp(word, "ELSE") == 0)
+			{
+				popQueue();
+				tag = 4;
+			}
+			break;
+		case 4:
+			break;
+		case 5:
+			if (strcmp(word, "TO") == 0)
+			{
+				popQueue();
+				tag = 6;
+			}
+			break;
+		case 6:
+			if (strcmp(word, "DO") == 0)
+			{
+				popQueue();
+				tag = 7;
+			}
+			break;
+		case 7:
+			break;
+		default:
+			break;
+		}
+	}
+	//printf("setTag: %s\n", word);
+	return;
+}
+
 bool control()		//control the shift-reduce-accpet
 {
 	int x, y, s;
@@ -319,9 +388,9 @@ bool control()		//control the shift-reduce-accpet
 	char word[KEY_LENGTH];
 	while (fscanf(fp, "%s", word) == 1)
 	{
-		tagREP = 1;
 	REP:
 		fprintf(out, "\nThe input word is: %s\n", word);
+		//printf("The input word is: %s\n", word);
 		x = topStates();
 		y = getIndex(word);
 		if (y < 0)
@@ -353,7 +422,6 @@ bool control()		//control the shift-reduce-accpet
 				fclose(fp);
 				return false;
 			}
-			tagREP = 0;
 			goto
 				REP;	//we keep this word to continue to judge
 		}
@@ -365,69 +433,7 @@ bool control()		//control the shift-reduce-accpet
 			fclose(fp);
 			return false;
 		}
-		
-		if (tagREP)
-		{
-			if (tag == 0)	//set the starter of the threeAddress
-			{
-				if (strcmp(word, "PBEGIN") == 0)
-					tag = 1;
-			}
-			else
-			{
-				switch (tag)
-				{
-				case 1:
-					if (strcmp(word, "IF") == 0)
-					{
-						popQueue();
-						initStatement();
-						tag = 2;
-					}
-					else if (strcmp(word, "FOR") == 0)
-					{
-						popQueue();
-						initStatement();
-						tag = 5;
-					}
-					break;
-				case 2:
-					if (strcmp(word, "THEN") == 0)
-					{
-						popQueue();
-						tag = 3;
-					}
-					break;
-				case 3:
-					if (strcmp(word, "ELSE") == 0)
-					{
-						popQueue();
-						tag = 4;
-					}
-					break;
-				case 4:
-					break;
-				case 5:
-					if (strcmp(word, "TO") == 0)
-					{
-						popQueue();
-						tag = 6;
-					}
-					break;
-				case 6:
-					if (strcmp(word, "DO") == 0)
-					{
-						popQueue();
-						tag = 7;
-					}
-					break;
-				case 7:
-					break;
-				default:
-					break;
-				}
-			}
-		}
+		setTag(word);
 	}
 	printf("The last step!\n");
 	strcpy(word, "$");
