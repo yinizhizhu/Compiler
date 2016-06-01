@@ -50,25 +50,132 @@ char key[KEY_COL][KEY_LENGTH] = { "",
 "function_designator", "set_constructor", "unsigned_number", "unsigned_integer",
 "unsigned_real", "member_designator_list", "member_designator" };
 
-int getIndex(char* token)		//return the col of the token in the table
+char assignment[5][KEY_LENGTH] = { "assignment_statement", "->", "variable_access", "ASSIGNMENT", "expression" };
+char relop[5][KEY_LENGTH] = { "expression", "->", "simple_expression", "relop", "simple_expression" };//for operator '>'
+char ifStatement[8][KEY_LENGTH] = { "closed_if_statement", "->", "IF", "boolean_expression", "THEN", "closed_statement", "ELSE", "closed_statement" };
+char addop[5][KEY_LENGTH] = { "simple_expression", "->", "simple_expression", "addop", "term" };//for operator '+'
+char forStatement[10][KEY_LENGTH] = { "closed_for_statement", "->", "FOR", "control_variable", "ASSIGNMENT", "initial_value", "direction", "final_value", "DO", "closed_statement" };
+static int tag = 0;
+
+int getIndex(char* word)		//return the col of the word in the table
 {
 	int i = 1;
 	for (; i < 200; i++)
-		if (strcmp(token, key[i]) == 0)
+		if (strcmp(word, key[i]) == 0)
 			return i;
 	return -1;
 }
 
-void shift(int index, char* token)		//shift, Just shift the token into the table
+void shift(int index, char* word)		//shift, Just shift the word into the table
 {
 	int x = topStates();
 
-	fprintf(out, "shift %s\n", getContainer(x, index)[0]); //container[0], token
+	fprintf(out, "shift %s\n", getContainer(x, index)[0]); //container[0], word
 
 	pushStates(atoi(getContainer(x, index)[0]));
-	pushNames(token);
+	pushNames(word);
 	//printf("The size of states: %d, %d, the size of names: %d, %s\n", sizeStates(), topStates(), sizeNames(), topNames());
 	return;
+}
+
+void assignmentT(int x, int y, char** container)
+{
+	int i;
+	for (i = 0; i < 5; i++)
+		if (strcmp(container[i], assignment[i]) != 0)
+			break;
+	if (i == 5)
+	{
+		printf("Assignment!\n");
+		token *head = frontQueue();
+		insertThreeAddress(0, head->next->value, ":=", head->value);
+		for (int i = 0; i < 2; i++)
+			popQueue();
+	}
+	return;
+}
+
+void relopT(int x, int y, char** container)
+{
+	token *head = frontQueue();
+	insertThreeAddress(5, head->next->value, ">", head->value);
+	for (int i = 0; i < 2; i++)
+		popQueue();
+	return;
+}
+
+void addopT(int x, int y, char** container)
+{
+	token *head = frontQueue();
+	insertThreeAddress(1, head->next->value, head->next->next->value, head->value);
+	for (int i = 0; i < 3; i++)
+		popQueue();
+	return;
+}
+
+void ifT(int x, int y, char** container)
+{
+	return;
+}
+
+void forT(int x, int y, char** container)
+{
+	return;
+}
+
+void translate(int x, int y, char** container)
+{
+	int i;
+	switch (tag)
+	{
+	case 0:
+		break;
+	case 1:	//assignment
+		if (getNum(x, y) == 5)
+		{
+			assignmentT(x, y, container);	// a := 2, b := 3=
+		}
+		break;
+	case 2:	//if statement
+		if (getNum(x, y) == 8)
+		{
+			for (i = 0; i < 8; i++)
+				if (strcmp(container[i], ifStatement[i]) != 0)
+					break;
+			if (i == 8)
+			{
+				printf("ifStatement!\n");
+				popQueue();
+				relopT(x, y, container);//  a  > 0
+				popQueue();
+				assignmentT(x, y, container); // b := 2
+				popQueue();
+				assignmentT(x, y, container); // b := 3
+				tag = 1;
+			}
+		}
+		break;
+	case 3:	//for statement
+		if (getNum(x, y) == 10)
+		{
+			for (i = 0; i < 10; i++)
+				if (strcmp(container[i], forStatement[i]) != 0)
+					break;
+			if (i == 10)
+			{
+				printf("forStatement!\n");
+				popQueue();
+				assignmentT(x, y, container);	// i := 1
+				for (i = 0; i < 3; i++)
+					popQueue();
+				addopT(x, y, container);	//c := a + b
+				tag = 1;
+			}
+		}
+		break;
+	default:
+		break;
+	}
 }
 
 bool reduce(int index)		//reduce
@@ -76,6 +183,8 @@ bool reduce(int index)		//reduce
 	int i;
 	int x = topStates(), y = index;
 	char** container = getContainer(x, y);
+
+	translate(x, y, container);	//translate according to the process of reducing
 
 	fprintf(out, "reduce ");
 	for (i = 0; i < getNum(x, y); i++) //output the production
@@ -101,11 +210,11 @@ bool reduce(int index)		//reduce
 	return go(container[0]);
 }
 
-bool go(char* token)			//goto the next state
+bool go(char* word)			//goto the next state
 {
 	int x, y;
 	x = topStates();
-	y = getIndex(token);
+	y = getIndex(word);
 	if (getS(x, y) == 3)	//the action of goto
 	{
 		if (getNum(x, y) != -1)		//right for the goto
@@ -129,13 +238,13 @@ bool control()		//control the shift-reduce-accpet
 {
 	int x, y, s;
 	FILE* fp = fopen("inputSyn.txt", "r");
-	char token[KEY_LENGTH];
-	while (fscanf(fp, "%s", token) == 1)
+	char word[KEY_LENGTH];
+	while (fscanf(fp, "%s", word) == 1)
 	{
 	REP:
-		fprintf(out, "\nThe input token is: %s\n", token);
+		fprintf(out, "\nThe input word is: %s\n", word);
 		x = topStates();
-		y = getIndex(token);
+		y = getIndex(word);
 		if (y < 0)
 		{
 			fprintf(out, "Syntax error!\n");
@@ -166,23 +275,36 @@ bool control()		//control the shift-reduce-accpet
 				return false;
 			}
 			goto
-				REP;	//we keep this token to continue to judge
+				REP;	//we keep this word to continue to judge
 		}
-		else if (s == 2)	//shift the token
-			shift(y, token);
+		else if (s == 2)	//shift the word
+			shift(y, word);
 		else		//the state is wrong for 3, no need to go to the next state
 		{
 			fprintf(out, "Syntax error: state equal 3, but no need to goto!\n");
 			fclose(fp);
 			return false;
 		}
+
+		if (tag == 0)	//set the starter of the threeAddress
+		{
+			if (strcmp(word, "PBEGIN") == 0)
+				tag = 1;
+		}
+		else
+		{
+			if (strcmp(word, "IF") == 0)
+				tag = 2;
+			else if (strcmp(word, "FOR") == 0)
+				tag = 3;
+		}
 	}
 	printf("The last step!\n");
-	strcpy(token, "$");
-	y = getIndex(token);
+	strcpy(word, "$");
+	y = getIndex(word);
 	while (sizeStates() > 1)
 	{
-		fprintf(out, "\nThe input token is: %s\n", token);
+		fprintf(out, "\nThe input word is: %s\n", word);
 		x = topStates();
 		s = getS(x, y);
 		showNamesFile(out);

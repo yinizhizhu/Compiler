@@ -91,9 +91,9 @@ void readProgram()		//Read the program from source file.
 	int move_next = 0, head, tail;
 	int realGet, i, code=0;
 
-	int lines = 1, index;		//The lines the cursor lands
+	int lines = 1, index, tag = 0;		//The lines the cursor lands
 
-	char buffer[2][BUFFER], token[N], temp;
+	char buffer[2][BUFFER], word[N], temp;
 
 	head = 0;
 	tail = -1;
@@ -109,12 +109,12 @@ void readProgram()		//Read the program from source file.
 
 			if (!isSeparator(temp))	//the next letter is not separator
 			{
-				//Go on moving to next and keep the letters into "token"
-				if (isDigit(temp))		//The first letter is Digit, so just judge whether the "token" is a number or not
+				//Go on moving to next and keep the letters into "word"
+				if (isDigit(temp))		//The first letter is Digit, so just judge whether the "word" is a number or not
 				{
 					while (!isSeparator(temp))
 					{
-						token[tail - head] = temp;
+						word[tail - head] = temp;
 						if (!isDigit(temp))
 						{
 							printf("Terrible name in %d line(s)! Please check.\n", lines);
@@ -132,7 +132,7 @@ void readProgram()		//Read the program from source file.
 				{
 					while (!isSeparator(temp))
 					{
-						token[tail - head] = temp;
+						word[tail - head] = temp;
 						if (code == 0 && isDigit(temp))
 							code = 36;
 						if (code == 0 && temp == '_')
@@ -164,36 +164,47 @@ void readProgram()		//Read the program from source file.
 			{
 				if (tail > head)
 				{
-					token[tail - head] = '\0';
-					//printf("%s\n", token);
-					if (code == 0)	//Token is not number or id
+					word[tail - head] = '\0';
+					//printf("%s\n", word);
+					if (code == 0)	//word is not number or id
 					{
-						index = searchStr(token);
+						index = searchStr(word);
 						if (index > 0)		//key words
 						{
 							printf("(%s, )\n", KEY_WORDS[index]);
 							fprintf(out, "%s\n", KEY_WORDS[index]);
-							//fprintf(out, "(%s, )\n", token);
+							//fprintf(out, "(%s, )\n", word);
+							if (tag)
+								pushQueue(word);	//for semantic
+							else
+							{
+								if (strcmp(word, "begin") == 0)
+									tag = 1;
+							}
 						}
 						else	//identifier
 						{
-							if (strlen(token) > 0)
+							if (strlen(word) > 0)
 							{
-								if (!insertIntoSymbolList(token))
-									printf("Error, cannot insert!\n");	//insert the token into the symbol list
-								printf("(%s, %s)\n", KEY_WORDS[36], token);
-								fprintf(out, "%s\n", KEY_WORDS[36], token);
-								//fprintf(out, "(%s, %s)\n", KEY_WORDS[36], token);
+								if (!insertIntoSymbolList(word))
+									printf("Error, cannot insert!\n");	//insert the word into the symbol list
+								printf("(%s, %s)\n", KEY_WORDS[36], word);
+								fprintf(out, "%s\n", KEY_WORDS[36], word);
+								//fprintf(out, "(%s, %s)\n", KEY_WORDS[36], word);
+								if (tag)
+									pushQueue(word);	//for semantic
 							}
 						}
 					}
 					else	//integer
 					{
-						if (!insertIntoSymbolList2(token, 4, 0, 0))
+						if (!insertIntoSymbolList2(word, 4, 0, 0))
 							printf("Error, cannot insert2!\n");	//insert the constant into the symbol list
-						printf("(%s, %s)\n", KEY_WORDS[code], token);
-						fprintf(out, "%s\n", KEY_WORDS[code], token);
-						//fprintf(out, "(%s, %s)\n", KEY_WORDS[code], token);
+						printf("(%s, %s)\n", KEY_WORDS[code], word);
+						fprintf(out, "%s\n", KEY_WORDS[code], word);
+						//fprintf(out, "(%s, %s)\n", KEY_WORDS[code], word);
+						if (tag)
+							pushQueue(word);	//for semantic
 					}
 				}
 				switch (temp)
@@ -299,7 +310,7 @@ void readProgram()		//Read the program from source file.
 					i++;
 					while (buffer[move_next][i] != 39)
 					{ 
-						token[tail - head] = buffer[move_next][i];
+						word[tail - head] = buffer[move_next][i];
 						i++;
 						tail++;
 						if (i >= realGet)
@@ -308,12 +319,14 @@ void readProgram()		//Read the program from source file.
 							return;
 						}
 					}
-					token[tail - head] = '\0';
-					if (!insertIntoSymbolList2(token, 1, 3, 0))
+					word[tail - head] = '\0';
+					if (!insertIntoSymbolList2(word, 1, 3, 0))
 						printf("Error, cannot insert2!\n");
-					printf("(%s£¬ '%s')\n", KEY_WORDS[39], token);
-					fprintf(out, "%s\n", KEY_WORDS[39], token);
-					//fprintf(out, "(%s£¬ '%s')\n", KEY_WORDS[39], token);
+					printf("(%s£¬ '%s')\n", KEY_WORDS[39], word);
+					fprintf(out, "%s\n", KEY_WORDS[39], word);
+					//fprintf(out, "(%s£¬ '%s')\n", KEY_WORDS[39], word);
+					if (tag)
+						pushQueue(word);	//for semantic
 					break;
 				default:
 					break;

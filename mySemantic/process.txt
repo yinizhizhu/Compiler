@@ -1,1050 +1,1050 @@
 
-The input token is: PROGRAM
+The input word is: PROGRAM
 NamesStack: # 
 StatesStack: 0 
 shift 7
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # PROGRAM 
 StatesStack: 0 7 
 shift 17
 
-The input token is: LPAREN
+The input word is: LPAREN
 NamesStack: # PROGRAM IDENTIFIER 
 StatesStack: 0 7 17 
 reduce identifier -> IDENTIFIER 
 
-The input token is: LPAREN
+The input word is: LPAREN
 NamesStack: # PROGRAM identifier 
 StatesStack: 0 7 16 
 shift 28
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # PROGRAM identifier LPAREN 
 StatesStack: 0 7 16 28 
 shift 76
 
-The input token is: COMMA
+The input word is: COMMA
 NamesStack: # PROGRAM identifier LPAREN IDENTIFIER 
 StatesStack: 0 7 16 28 76 
 reduce identifier -> IDENTIFIER 
 
-The input token is: COMMA
+The input word is: COMMA
 NamesStack: # PROGRAM identifier LPAREN identifier 
 StatesStack: 0 7 16 28 74 
 reduce identifier_list -> identifier 
 
-The input token is: COMMA
+The input word is: COMMA
 NamesStack: # PROGRAM identifier LPAREN identifier_list 
 StatesStack: 0 7 16 28 75 
 shift 99
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # PROGRAM identifier LPAREN identifier_list COMMA 
 StatesStack: 0 7 16 28 75 99 
 reduce comma -> COMMA 
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # PROGRAM identifier LPAREN identifier_list comma 
 StatesStack: 0 7 16 28 75 173 
 shift 76
 
-The input token is: RPAREN
+The input word is: RPAREN
 NamesStack: # PROGRAM identifier LPAREN identifier_list comma IDENTIFIER 
 StatesStack: 0 7 16 28 75 173 76 
 reduce identifier -> IDENTIFIER 
 
-The input token is: RPAREN
+The input word is: RPAREN
 NamesStack: # PROGRAM identifier LPAREN identifier_list comma identifier 
 StatesStack: 0 7 16 28 75 173 261 
 reduce identifier_list -> identifier_list comma identifier 
 
-The input token is: RPAREN
+The input word is: RPAREN
 NamesStack: # PROGRAM identifier LPAREN identifier_list 
 StatesStack: 0 7 16 28 75 
 shift 174
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # PROGRAM identifier LPAREN identifier_list RPAREN 
 StatesStack: 0 7 16 28 75 174 
 reduce program_heading -> PROGRAM identifier LPAREN identifier_list RPAREN 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading 
 StatesStack: 0 4 
 shift 9
 
-The input token is: VAR
+The input word is: VAR
 NamesStack: # program_heading SEMICOLON 
 StatesStack: 0 4 9 
 reduce semicolon -> SEMICOLON 
 
-The input token is: VAR
+The input word is: VAR
 NamesStack: # program_heading semicolon 
 StatesStack: 0 4 8 
 reduce label_declaration_part -> ¦Å 
 
-The input token is: VAR
+The input word is: VAR
 NamesStack: # program_heading semicolon label_declaration_part 
 StatesStack: 0 4 8 19 
 reduce constant_definition_part -> ¦Å 
 
-The input token is: VAR
+The input word is: VAR
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part 
 StatesStack: 0 4 8 19 30 
 reduce type_definition_part -> ¦Å 
 
-The input token is: VAR
+The input word is: VAR
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part 
 StatesStack: 0 4 8 19 30 77 
 shift 176
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR 
 StatesStack: 0 4 8 19 30 77 176 
 shift 50
 
-The input token is: COMMA
+The input word is: COMMA
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR IDENTIFIER 
 StatesStack: 0 4 8 19 30 77 176 50 
 reduce identifier -> IDENTIFIER 
 
-The input token is: COMMA
+The input word is: COMMA
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier 
 StatesStack: 0 4 8 19 30 77 176 46 
 reduce identifier_list -> identifier 
 
-The input token is: COMMA
+The input word is: COMMA
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list 
 StatesStack: 0 4 8 19 30 77 176 47 
 shift 99
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list COMMA 
 StatesStack: 0 4 8 19 30 77 176 47 99 
 reduce comma -> COMMA 
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma 
 StatesStack: 0 4 8 19 30 77 176 47 97 
 shift 50
 
-The input token is: COMMA
+The input word is: COMMA
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma IDENTIFIER 
 StatesStack: 0 4 8 19 30 77 176 47 97 50 
 reduce identifier -> IDENTIFIER 
 
-The input token is: COMMA
+The input word is: COMMA
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma identifier 
 StatesStack: 0 4 8 19 30 77 176 47 97 210 
 reduce identifier_list -> identifier_list comma identifier 
 
-The input token is: COMMA
+The input word is: COMMA
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list 
 StatesStack: 0 4 8 19 30 77 176 47 
 shift 99
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list COMMA 
 StatesStack: 0 4 8 19 30 77 176 47 99 
 reduce comma -> COMMA 
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma 
 StatesStack: 0 4 8 19 30 77 176 47 97 
 shift 50
 
-The input token is: COMMA
+The input word is: COMMA
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma IDENTIFIER 
 StatesStack: 0 4 8 19 30 77 176 47 97 50 
 reduce identifier -> IDENTIFIER 
 
-The input token is: COMMA
+The input word is: COMMA
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma identifier 
 StatesStack: 0 4 8 19 30 77 176 47 97 210 
 reduce identifier_list -> identifier_list comma identifier 
 
-The input token is: COMMA
+The input word is: COMMA
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list 
 StatesStack: 0 4 8 19 30 77 176 47 
 shift 99
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list COMMA 
 StatesStack: 0 4 8 19 30 77 176 47 99 
 reduce comma -> COMMA 
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma 
 StatesStack: 0 4 8 19 30 77 176 47 97 
 shift 50
 
-The input token is: COLON
+The input word is: COLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma IDENTIFIER 
 StatesStack: 0 4 8 19 30 77 176 47 97 50 
 reduce identifier -> IDENTIFIER 
 
-The input token is: COLON
+The input word is: COLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list comma identifier 
 StatesStack: 0 4 8 19 30 77 176 47 97 210 
 reduce identifier_list -> identifier_list comma identifier 
 
-The input token is: COLON
+The input word is: COLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list 
 StatesStack: 0 4 8 19 30 77 176 47 
 shift 98
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list COLON 
 StatesStack: 0 4 8 19 30 77 176 47 98 
 shift 121
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list COLON IDENTIFIER 
 StatesStack: 0 4 8 19 30 77 176 47 98 121 
 reduce identifier -> IDENTIFIER 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list COLON identifier 
 StatesStack: 0 4 8 19 30 77 176 47 98 102 
 reduce type_denoter -> identifier 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR identifier_list COLON type_denoter 
 StatesStack: 0 4 8 19 30 77 176 47 98 211 
 reduce variable_declaration -> identifier_list COLON type_denoter 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR variable_declaration 
 StatesStack: 0 4 8 19 30 77 176 49 
 reduce variable_declaration_list -> variable_declaration 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR variable_declaration_list 
 StatesStack: 0 4 8 19 30 77 176 264 
 shift 352
 
-The input token is: PBEGIN
+The input word is: PBEGIN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR variable_declaration_list SEMICOLON 
 StatesStack: 0 4 8 19 30 77 176 264 352 
 reduce semicolon -> SEMICOLON 
 
-The input token is: PBEGIN
+The input word is: PBEGIN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part VAR variable_declaration_list semicolon 
 StatesStack: 0 4 8 19 30 77 176 264 351 
 reduce variable_declaration_part -> VAR variable_declaration_list semicolon 
 
-The input token is: PBEGIN
+The input word is: PBEGIN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part 
 StatesStack: 0 4 8 19 30 77 175 
 reduce procedure_and_function_declaration_part -> ¦Å 
 
-The input token is: PBEGIN
+The input word is: PBEGIN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part 
 StatesStack: 0 4 8 19 30 77 175 262 
 shift 348
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN 
 StatesStack: 0 4 8 19 30 77 175 262 348 
 shift 437
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN IDENTIFIER 
 StatesStack: 0 4 8 19 30 77 175 262 348 437 
 reduce identifier -> IDENTIFIER 
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN identifier 
 StatesStack: 0 4 8 19 30 77 175 262 348 408 
 reduce variable_access -> identifier 
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN variable_access 
 StatesStack: 0 4 8 19 30 77 175 262 348 430 
 shift 499
 
-The input token is: DIGSEQ
+The input word is: DIGSEQ
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN variable_access ASSIGNMENT 
 StatesStack: 0 4 8 19 30 77 175 262 348 430 499 
 shift 704
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN variable_access ASSIGNMENT DIGSEQ 
 StatesStack: 0 4 8 19 30 77 175 262 348 430 499 704 
 reduce unsigned_integer -> DIGSEQ 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN variable_access ASSIGNMENT unsigned_integer 
 StatesStack: 0 4 8 19 30 77 175 262 348 430 499 701 
 reduce unsigned_number -> unsigned_integer 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN variable_access ASSIGNMENT unsigned_number 
 StatesStack: 0 4 8 19 30 77 175 262 348 430 499 700 
 reduce unsigned_constant -> unsigned_number 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN variable_access ASSIGNMENT unsigned_constant 
 StatesStack: 0 4 8 19 30 77 175 262 348 430 499 688 
 reduce primary -> unsigned_constant 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN variable_access ASSIGNMENT primary 
 StatesStack: 0 4 8 19 30 77 175 262 348 430 499 697 
 reduce exponentiation -> primary 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN variable_access ASSIGNMENT exponentiation 
 StatesStack: 0 4 8 19 30 77 175 262 348 430 499 696 
 reduce factor -> exponentiation 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN variable_access ASSIGNMENT factor 
 StatesStack: 0 4 8 19 30 77 175 262 348 430 499 695 
 reduce term -> factor 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN variable_access ASSIGNMENT term 
 StatesStack: 0 4 8 19 30 77 175 262 348 430 499 694 
 reduce simple_expression -> term 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN variable_access ASSIGNMENT simple_expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 430 499 693 
 reduce expression -> simple_expression 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN variable_access ASSIGNMENT expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 430 499 690 
 reduce assignment_statement -> variable_access ASSIGNMENT expression 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN assignment_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 417 
 reduce non_labeled_closed_statement -> assignment_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN non_labeled_closed_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 416 
 reduce closed_statement -> non_labeled_closed_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN closed_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 414 
 reduce statement -> closed_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 412 
 reduce statement_sequence -> statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 
 shift 498
 
-The input token is: IF
+The input word is: IF
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence SEMICOLON 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 498 
 reduce semicolon -> SEMICOLON 
 
-The input token is: IF
+The input word is: IF
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 
 shift 438
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 
 shift 556
 
-The input token is: GT
+The input word is: GT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF IDENTIFIER 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 556 
 reduce identifier -> IDENTIFIER 
 
-The input token is: GT
+The input word is: GT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF identifier 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 536 
 reduce variable_access -> identifier 
 
-The input token is: GT
+The input word is: GT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF variable_access 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 540 
 reduce primary -> variable_access 
 
-The input token is: GT
+The input word is: GT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF primary 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 548 
 reduce exponentiation -> primary 
 
-The input token is: GT
+The input word is: GT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF exponentiation 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 547 
 reduce factor -> exponentiation 
 
-The input token is: GT
+The input word is: GT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF factor 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 546 
 reduce term -> factor 
 
-The input token is: GT
+The input word is: GT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF term 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 545 
 reduce simple_expression -> term 
 
-The input token is: GT
+The input word is: GT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF simple_expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 544 
 shift 751
 
-The input token is: DIGSEQ
+The input word is: DIGSEQ
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF simple_expression GT 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 544 751 
 reduce relop -> GT 
 
-The input token is: DIGSEQ
+The input word is: DIGSEQ
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF simple_expression relop 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 544 821 
 shift 1068
 
-The input token is: THEN
+The input word is: THEN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF simple_expression relop DIGSEQ 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 544 821 1068 
 reduce unsigned_integer -> DIGSEQ 
 
-The input token is: THEN
+The input word is: THEN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF simple_expression relop unsigned_integer 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 544 821 1065 
 reduce unsigned_number -> unsigned_integer 
 
-The input token is: THEN
+The input word is: THEN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF simple_expression relop unsigned_number 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 544 821 1064 
 reduce unsigned_constant -> unsigned_number 
 
-The input token is: THEN
+The input word is: THEN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF simple_expression relop unsigned_constant 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 544 821 1053 
 reduce primary -> unsigned_constant 
 
-The input token is: THEN
+The input word is: THEN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF simple_expression relop primary 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 544 821 1061 
 reduce exponentiation -> primary 
 
-The input token is: THEN
+The input word is: THEN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF simple_expression relop exponentiation 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 544 821 1060 
 reduce factor -> exponentiation 
 
-The input token is: THEN
+The input word is: THEN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF simple_expression relop factor 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 544 821 1059 
 reduce term -> factor 
 
-The input token is: THEN
+The input word is: THEN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF simple_expression relop term 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 544 821 1058 
 reduce simple_expression -> term 
 
-The input token is: THEN
+The input word is: THEN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF simple_expression relop simple_expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 544 821 1057 
 reduce expression -> simple_expression relop simple_expression 
 
-The input token is: THEN
+The input word is: THEN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 541 
 reduce boolean_expression -> expression 
 
-The input token is: THEN
+The input word is: THEN
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 
 shift 817
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 
 shift 1042
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN IDENTIFIER 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1042 
 reduce identifier -> IDENTIFIER 
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN identifier 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1023 
 reduce variable_access -> identifier 
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN variable_access 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1038 
 shift 1371
 
-The input token is: DIGSEQ
+The input word is: DIGSEQ
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN variable_access ASSIGNMENT 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1038 1371 
 shift 1614
 
-The input token is: ELSE
+The input word is: ELSE
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN variable_access ASSIGNMENT DIGSEQ 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1038 1371 1614 
 reduce unsigned_integer -> DIGSEQ 
 
-The input token is: ELSE
+The input word is: ELSE
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN variable_access ASSIGNMENT unsigned_integer 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1038 1371 1611 
 reduce unsigned_number -> unsigned_integer 
 
-The input token is: ELSE
+The input word is: ELSE
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN variable_access ASSIGNMENT unsigned_number 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1038 1371 1610 
 reduce unsigned_constant -> unsigned_number 
 
-The input token is: ELSE
+The input word is: ELSE
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN variable_access ASSIGNMENT unsigned_constant 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1038 1371 1598 
 reduce primary -> unsigned_constant 
 
-The input token is: ELSE
+The input word is: ELSE
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN variable_access ASSIGNMENT primary 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1038 1371 1607 
 reduce exponentiation -> primary 
 
-The input token is: ELSE
+The input word is: ELSE
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN variable_access ASSIGNMENT exponentiation 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1038 1371 1606 
 reduce factor -> exponentiation 
 
-The input token is: ELSE
+The input word is: ELSE
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN variable_access ASSIGNMENT factor 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1038 1371 1605 
 reduce term -> factor 
 
-The input token is: ELSE
+The input word is: ELSE
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN variable_access ASSIGNMENT term 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1038 1371 1604 
 reduce simple_expression -> term 
 
-The input token is: ELSE
+The input word is: ELSE
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN variable_access ASSIGNMENT simple_expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1038 1371 1603 
 reduce expression -> simple_expression 
 
-The input token is: ELSE
+The input word is: ELSE
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN variable_access ASSIGNMENT expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1038 1371 1600 
 reduce assignment_statement -> variable_access ASSIGNMENT expression 
 
-The input token is: ELSE
+The input word is: ELSE
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN assignment_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1029 
 reduce non_labeled_closed_statement -> assignment_statement 
 
-The input token is: ELSE
+The input word is: ELSE
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN non_labeled_closed_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1028 
 reduce closed_statement -> non_labeled_closed_statement 
 
-The input token is: ELSE
+The input word is: ELSE
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 
 shift 1370
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 
 shift 437
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE IDENTIFIER 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 437 
 reduce identifier -> IDENTIFIER 
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE identifier 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 408 
 reduce variable_access -> identifier 
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE variable_access 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 430 
 shift 499
 
-The input token is: DIGSEQ
+The input word is: DIGSEQ
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE variable_access ASSIGNMENT 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 430 499 
 shift 704
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE variable_access ASSIGNMENT DIGSEQ 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 430 499 704 
 reduce unsigned_integer -> DIGSEQ 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE variable_access ASSIGNMENT unsigned_integer 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 430 499 701 
 reduce unsigned_number -> unsigned_integer 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE variable_access ASSIGNMENT unsigned_number 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 430 499 700 
 reduce unsigned_constant -> unsigned_number 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE variable_access ASSIGNMENT unsigned_constant 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 430 499 688 
 reduce primary -> unsigned_constant 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE variable_access ASSIGNMENT primary 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 430 499 697 
 reduce exponentiation -> primary 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE variable_access ASSIGNMENT exponentiation 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 430 499 696 
 reduce factor -> exponentiation 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE variable_access ASSIGNMENT factor 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 430 499 695 
 reduce term -> factor 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE variable_access ASSIGNMENT term 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 430 499 694 
 reduce simple_expression -> term 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE variable_access ASSIGNMENT simple_expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 430 499 693 
 reduce expression -> simple_expression 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE variable_access ASSIGNMENT expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 430 499 690 
 reduce assignment_statement -> variable_access ASSIGNMENT expression 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE assignment_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 417 
 reduce non_labeled_closed_statement -> assignment_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE non_labeled_closed_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 416 
 reduce closed_statement -> non_labeled_closed_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IF boolean_expression THEN closed_statement ELSE closed_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 438 539 817 1027 1370 1595 
 reduce closed_if_statement -> IF boolean_expression THEN closed_statement ELSE closed_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon closed_if_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 423 
 reduce non_labeled_closed_statement -> closed_if_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon non_labeled_closed_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 416 
 reduce closed_statement -> non_labeled_closed_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon closed_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 414 
 reduce statement -> closed_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 685 
 reduce statement_sequence -> statement_sequence semicolon statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 
 shift 498
 
-The input token is: FOR
+The input word is: FOR
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence SEMICOLON 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 498 
 reduce semicolon -> SEMICOLON 
 
-The input token is: FOR
+The input word is: FOR
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 
 shift 435
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 
 shift 533
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR IDENTIFIER 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 533 
 reduce identifier -> IDENTIFIER 
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR identifier 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 531 
 reduce control_variable -> identifier 
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 
 shift 813
 
-The input token is: DIGSEQ
+The input word is: DIGSEQ
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 
 shift 1015
 
-The input token is: TO
+The input word is: TO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT DIGSEQ 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 1015 
 reduce unsigned_integer -> DIGSEQ 
 
-The input token is: TO
+The input word is: TO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT unsigned_integer 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 1012 
 reduce unsigned_number -> unsigned_integer 
 
-The input token is: TO
+The input word is: TO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT unsigned_number 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 1011 
 reduce unsigned_constant -> unsigned_number 
 
-The input token is: TO
+The input word is: TO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT unsigned_constant 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 998 
 reduce primary -> unsigned_constant 
 
-The input token is: TO
+The input word is: TO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT primary 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 1008 
 reduce exponentiation -> primary 
 
-The input token is: TO
+The input word is: TO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT exponentiation 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 1007 
 reduce factor -> exponentiation 
 
-The input token is: TO
+The input word is: TO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT factor 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 1006 
 reduce term -> factor 
 
-The input token is: TO
+The input word is: TO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT term 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 1005 
 reduce simple_expression -> term 
 
-The input token is: TO
+The input word is: TO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT simple_expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 1004 
 reduce expression -> simple_expression 
 
-The input token is: TO
+The input word is: TO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 1001 
 reduce initial_value -> expression 
 
-The input token is: TO
+The input word is: TO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 
 shift 1354
 
-The input token is: DIGSEQ
+The input word is: DIGSEQ
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value TO 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1354 
 reduce direction -> TO 
 
-The input token is: DIGSEQ
+The input word is: DIGSEQ
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 
 shift 614
 
-The input token is: DO
+The input word is: DO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction DIGSEQ 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 614 
 reduce unsigned_integer -> DIGSEQ 
 
-The input token is: DO
+The input word is: DO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction unsigned_integer 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 611 
 reduce unsigned_number -> unsigned_integer 
 
-The input token is: DO
+The input word is: DO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction unsigned_number 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 610 
 reduce unsigned_constant -> unsigned_number 
 
-The input token is: DO
+The input word is: DO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction unsigned_constant 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 597 
 reduce primary -> unsigned_constant 
 
-The input token is: DO
+The input word is: DO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction primary 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 607 
 reduce exponentiation -> primary 
 
-The input token is: DO
+The input word is: DO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction exponentiation 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 606 
 reduce factor -> exponentiation 
 
-The input token is: DO
+The input word is: DO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction factor 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 605 
 reduce term -> factor 
 
-The input token is: DO
+The input word is: DO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction term 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 604 
 reduce simple_expression -> term 
 
-The input token is: DO
+The input word is: DO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction simple_expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 603 
 reduce expression -> simple_expression 
 
-The input token is: DO
+The input word is: DO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1559 
 reduce final_value -> expression 
 
-The input token is: DO
+The input word is: DO
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 
 shift 1797
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 
 shift 437
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO IDENTIFIER 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 437 
 reduce identifier -> IDENTIFIER 
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO identifier 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 408 
 reduce variable_access -> identifier 
 
-The input token is: ASSIGNMENT
+The input word is: ASSIGNMENT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 
 shift 499
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 
 shift 705
 
-The input token is: PLUS
+The input word is: PLUS
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT IDENTIFIER 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 705 
 reduce identifier -> IDENTIFIER 
 
-The input token is: PLUS
+The input word is: PLUS
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT identifier 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 686 
 reduce variable_access -> identifier 
 
-The input token is: PLUS
+The input word is: PLUS
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT variable_access 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 689 
 reduce primary -> variable_access 
 
-The input token is: PLUS
+The input word is: PLUS
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT primary 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 697 
 reduce exponentiation -> primary 
 
-The input token is: PLUS
+The input word is: PLUS
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT exponentiation 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 696 
 reduce factor -> exponentiation 
 
-The input token is: PLUS
+The input word is: PLUS
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT factor 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 695 
 reduce term -> factor 
 
-The input token is: PLUS
+The input word is: PLUS
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT term 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 694 
 reduce simple_expression -> term 
 
-The input token is: PLUS
+The input word is: PLUS
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT simple_expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 693 
 shift 758
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT simple_expression PLUS 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 693 758 
 reduce addop -> PLUS 
 
-The input token is: IDENTIFIER
+The input word is: IDENTIFIER
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT simple_expression addop 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 693 907 
 shift 705
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT simple_expression addop IDENTIFIER 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 693 907 705 
 reduce identifier -> IDENTIFIER 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT simple_expression addop identifier 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 693 907 686 
 reduce variable_access -> identifier 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT simple_expression addop variable_access 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 693 907 689 
 reduce primary -> variable_access 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT simple_expression addop primary 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 693 907 697 
 reduce exponentiation -> primary 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT simple_expression addop exponentiation 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 693 907 696 
 reduce factor -> exponentiation 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT simple_expression addop factor 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 693 907 695 
 reduce term -> factor 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT simple_expression addop term 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 693 907 1230 
 reduce simple_expression -> simple_expression addop term 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT simple_expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 693 
 reduce expression -> simple_expression 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO variable_access ASSIGNMENT expression 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 430 499 690 
 reduce assignment_statement -> variable_access ASSIGNMENT expression 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO assignment_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 417 
 reduce non_labeled_closed_statement -> assignment_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO non_labeled_closed_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 416 
 reduce closed_statement -> non_labeled_closed_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon FOR control_variable ASSIGNMENT initial_value direction final_value DO closed_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 435 532 813 999 1352 1558 1797 1933 
 reduce closed_for_statement -> FOR control_variable ASSIGNMENT initial_value direction final_value DO closed_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon closed_for_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 425 
 reduce non_labeled_closed_statement -> closed_for_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon non_labeled_closed_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 416 
 reduce closed_statement -> non_labeled_closed_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon closed_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 414 
 reduce statement -> closed_statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 685 
 reduce statement_sequence -> statement_sequence semicolon statement 
 
-The input token is: SEMICOLON
+The input word is: SEMICOLON
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 
 shift 498
 
-The input token is: END
+The input word is: END
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence SEMICOLON 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 498 
 reduce semicolon -> SEMICOLON 
 
-The input token is: END
+The input word is: END
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 
 reduce non_labeled_closed_statement -> ¦Å 
 
-The input token is: END
+The input word is: END
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon non_labeled_closed_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 416 
 reduce closed_statement -> non_labeled_closed_statement 
 
-The input token is: END
+The input word is: END
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon closed_statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 414 
 reduce statement -> closed_statement 
 
-The input token is: END
+The input word is: END
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon statement 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 496 685 
 reduce statement_sequence -> statement_sequence semicolon statement 
 
-The input token is: END
+The input word is: END
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 
 shift 497
 
-The input token is: DOT
+The input word is: DOT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence END 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 497 
 reduce compound_statement -> PBEGIN statement_sequence END 
 
-The input token is: DOT
+The input word is: DOT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part compound_statement 
 StatesStack: 0 4 8 19 30 77 175 262 347 
 reduce statement_part -> compound_statement 
 
-The input token is: DOT
+The input word is: DOT
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part statement_part 
 StatesStack: 0 4 8 19 30 77 175 262 346 
 reduce block -> label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part statement_part 
 
-The input token is: DOT
+The input word is: DOT
 NamesStack: # program_heading semicolon block 
 StatesStack: 0 4 8 18 
 shift 29
 
-The input token is: $
+The input word is: $
 NamesStack: # program_heading semicolon block DOT 
 StatesStack: 0 4 8 18 29 
 reduce program -> program_heading semicolon block DOT 
 
-The input token is: $
+The input word is: $
 NamesStack: # program 
 StatesStack: 0 2 
 reduce file -> program 
 
-The input token is: $
+The input word is: $
 NamesStack: # file 
 StatesStack: 0 1 
 ACCEPT!

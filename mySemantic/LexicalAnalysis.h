@@ -11,6 +11,7 @@
 #include "code.h"
 #include "symbolManager.h"
 #include "definedByMyself.h"
+#include "tokenQueue.h"
 
 //const char KEY_WORDS[ALL_KEY][TYPE_LENGTH] = { "",
 //"AND", "ARRAY", "PBEGIN", "CASE",

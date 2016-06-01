@@ -1,34 +1,53 @@
-#include "semanticAnalysis.h"
+#include "main.h"
+//#define TEST
 
 int main()
 {
-	if (lex())
+#ifdef TEST
+	initQueue();
+	testQueue();
+#else
+	if (!initAll())
 	{
 		delSymbolList();
 		return -1;
 	}
-	initStates();
-	initNames();
-	initTable();
 
 	out = fopen("process.txt", "w");
 	if (control() == false)
 	{
-		fclose(out);
-		freeTable();
-		freeNames();
-		freeStates();
-		delSymbolList();
+		delAll();	//free the resource
 		return -1;
 	}
+	showSymbolList();
+
+	delAll();		//free the resource
+	showQueue();
+	showThreeAddress();
+#endif
+	return 0;
+}
+
+bool initAll()		//initial the enrionment
+{
+	initQueue();//Initial the tokenQueue
+	if (lex())
+	{
+		delSymbolList();
+		return false;
+	}
+	initStates();
+	initNames();
+	initTable();
+	return true;
+}
+
+void delAll()		//free the resource
+{
 	fclose(out);
-
-	testS();
-	//showSymbolList();
-
 	freeTable();
 	freeNames();
 	freeStates();
 	delSymbolList();
-	return 0;
+	return;
 }
