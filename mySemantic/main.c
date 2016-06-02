@@ -24,6 +24,8 @@ int main()
 	delAll();		//free the resource
 	showQueue();
 	showThreeAddress();
+	toMiddleCode();
+	delThreeAddress();
 #endif
 	return 0;
 }

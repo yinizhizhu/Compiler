@@ -5,6 +5,7 @@ begin
 	if a > 0 then
 		b:=2
 		else b:= 3;
+	a:=2;
 	for i:=1 to 21 do
 		c:=a+b;
 end.

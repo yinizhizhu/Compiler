@@ -669,6 +669,111 @@ NamesStack: # program_heading semicolon label_declaration_part constant_definiti
 StatesStack: 0 4 8 19 30 77 175 262 348 411 
 shift 498
 
+The input word is: IDENTIFIER
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence SEMICOLON 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 498 
+reduce semicolon -> SEMICOLON 
+
+The input word is: IDENTIFIER
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 
+shift 437
+
+The input word is: ASSIGNMENT
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon IDENTIFIER 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 437 
+reduce identifier -> IDENTIFIER 
+
+The input word is: ASSIGNMENT
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon identifier 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 408 
+reduce variable_access -> identifier 
+
+The input word is: ASSIGNMENT
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 430 
+shift 499
+
+The input word is: DIGSEQ
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 430 499 
+shift 704
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT DIGSEQ 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 430 499 704 
+reduce unsigned_integer -> DIGSEQ 
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT unsigned_integer 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 430 499 701 
+reduce unsigned_number -> unsigned_integer 
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT unsigned_number 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 430 499 700 
+reduce unsigned_constant -> unsigned_number 
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT unsigned_constant 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 430 499 688 
+reduce primary -> unsigned_constant 
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT primary 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 430 499 697 
+reduce exponentiation -> primary 
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT exponentiation 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 430 499 696 
+reduce factor -> exponentiation 
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT factor 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 430 499 695 
+reduce term -> factor 
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT term 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 430 499 694 
+reduce simple_expression -> term 
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT simple_expression 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 430 499 693 
+reduce expression -> simple_expression 
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon variable_access ASSIGNMENT expression 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 430 499 690 
+reduce assignment_statement -> variable_access ASSIGNMENT expression 
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon assignment_statement 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 417 
+reduce non_labeled_closed_statement -> assignment_statement 
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon non_labeled_closed_statement 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 416 
+reduce closed_statement -> non_labeled_closed_statement 
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon closed_statement 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 414 
+reduce statement -> closed_statement 
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence semicolon statement 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 496 685 
+reduce statement_sequence -> statement_sequence semicolon statement 
+
+The input word is: SEMICOLON
+NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence 
+StatesStack: 0 4 8 19 30 77 175 262 348 411 
+shift 498
+
 The input word is: FOR
 NamesStack: # program_heading semicolon label_declaration_part constant_definition_part type_definition_part variable_declaration_part procedure_and_function_declaration_part PBEGIN statement_sequence SEMICOLON 
 StatesStack: 0 4 8 19 30 77 175 262 348 411 498 

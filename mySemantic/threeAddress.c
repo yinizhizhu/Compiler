@@ -24,6 +24,11 @@ void initThreeAddressP(addressCode *p)
 	return;
 }
 
+addressCode *getFront()
+{
+	return threeAddress;
+}
+
 addressCode *getLast()
 {
 	addressCode *tmp = threeAddress;
