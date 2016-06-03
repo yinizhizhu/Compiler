@@ -12,7 +12,7 @@ L2:
 	i = 1
 L3:
 	c = a + b
-	i <= 21
+	if i <= 21
 		goto L3
 	goto L4
 L4:

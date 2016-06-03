@@ -494,7 +494,7 @@ void toMiddleCode()
 		case 6:
 			if (tagStatement == 3)
 			{
-				fprintf(out, "	%s %s %s\n", move->A3, move->A2, move->A1);
+				fprintf(out, "	if %s %s %s\n", move->A3, move->A2, move->A1);
 				fprintf(out, "		goto L%d\n", tagCounter);
 			}
 			break;
